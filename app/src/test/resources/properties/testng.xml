@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleTestSuite">
+    <test name="SampleTest" preserve-order="true" thread-count="5">
+        <!--packages> <package name="tests" /> </packages -->
+        <classes>
+            <class name="com.arnab.testng.tests.OpenAppTest">
+                <methods>
+                    <include name="openApp" />
+                </methods>
+            </class>
+          <!--  <class name="com.toranotec.realtimeredemptionapptesting.tests.LandingPageTest">
+                <methods>
+                    <include name="checkButtonsState" />
+                </methods>
+            </class>
+            <class name="com.toranotec.realtimeredemptionapptesting.tests.WebViewTest">
+                <methods>
+                    <include name="cardAuthorizationWithInvalidCardNumber" />
+                    <include name="cardAuthorizationWithInvalidCodeNumber" />
+                    <include name="cardAuthorizationFailure" />
+                    <include name="cardAuthorizationSuccess" />
+                </methods>
+            </class>
+            <class name="com.toranotec.realtimeredemptionapptesting.tests.CalculationTest">
+                <methods>
+                    <include name="checkButtonWhileInputUnitIsZero" />
+                    <include name="checkAmountsWhileInputUnitIsZero" />
+                    <include name="checkButtonBeforeCalculation" />
+                    <include name="checkAmountsBeforeCalculation" />
+                    <include name="checkButtonAfterCalculation" />
+                    <include name="checkAmountsAfterCalculation" />
+                    <include name="chargeGreaterThanCurrentAccountBalance" />
+                    <include name="chargeLessThanDailyLowerLimit" />
+                    <include name="chargeMoreThanDailyUpperLimit" />
+                    <include name="makeRealtimeRedemptionWithInvalidPassword" />
+                    <include name="makeRealtimeRedemptionWithValidPassword" />
+                    <include name="checkLockingPeriod" />
+                </methods>
+            </class>
+            <class name="com.toranotec.realtimeredemptionapptesting.tests.HistoryTest">
+                <methods>
+                    <include name="checkHistoryPage" />
+                </methods>
+            </class>-->
+        </classes>
+    </test> <!-- ToranokoTest -->
+</suite> <!-- ToranokoQASuite -->
