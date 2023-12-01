@@ -3,6 +3,7 @@
     <test name="SampleTest" preserve-order="true" thread-count="5">
         <!--packages> <package name="tests" /> </packages -->
         <classes>
+            <!--
             <class name="com.arnab.testng.tests.KkPlayerAppTest">
                 <methods>
                     <include name="openAppTest" />
@@ -12,6 +13,18 @@
                     <include name="scrollSongsListTest" />
                 </methods>
             </class>
+            -->
+
+            <class name="com.arnab.testng.tests.HasnabadLocalAppTest">
+                <methods>
+                    <include name="openAppTest" />
+                    <include name="waitForSplashAnimationTest" />
+                    <include name="openMenuTest" />
+                    <include name="swipeLeftRightTest" />
+                    <include name="openTrainLiveLocationTest" />
+                </methods>
+            </class>
+
         </classes>
     </test>
 </suite>
