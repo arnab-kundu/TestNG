@@ -101,8 +101,8 @@ public abstract class TestBase {
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, config.getProperty("NEW_COMMAND_TIMEOUT"));
 
 		// Set the below dependencies, if we don't want to clear app data and cache
-		// capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
-		// capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
+		capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+		capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
 
 		// Mobile application capabilities
 		capabilities.setCapability("appPackage", config.getProperty("APP_PACKAGE"));

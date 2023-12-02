@@ -15,6 +15,7 @@
             </class>
             -->
 
+            <!--
             <class name="com.arnab.testng.tests.HasnabadLocalAppTest">
                 <methods>
                     <include name="openAppTest" />
@@ -22,6 +23,18 @@
                     <include name="openMenuTest" />
                     <include name="swipeLeftRightTest" />
                     <include name="openTrainLiveLocationTest" />
+                </methods>
+            </class>
+            -->
+
+            <class name="com.arnab.testng.tests.CarScoreAppTest">
+                <methods>
+                    <include name="openAppTest" />
+                    <!--<include name="loginTest" />-->
+                    <include name="dealershipDisplayedTest" />
+                    <include name="openDealershipTest" />
+                    <include name="createReportTest" />
+                    <include name="createReportTestAfterEngineVideoStep" />
                 </methods>
             </class>
 
