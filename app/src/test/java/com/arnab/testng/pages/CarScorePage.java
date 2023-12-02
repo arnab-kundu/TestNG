@@ -24,8 +24,8 @@ public class CarScorePage extends PageBase {
     @AndroidFindBy(id = "com.dds.carscore.debug:id/dealerships")
     public MobileElement dealerships;
 
-    //@AndroidFindBy(id = "com.dds.carscore.debug:id/dealer_name")
-    //public MobileElement dealerName;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/vehicle_details")
+    public MobileElement vehicleDetails;
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView[1]")
     public MobileElement dealerName;
 
@@ -45,6 +45,8 @@ public class CarScorePage extends PageBase {
     public MobileElement cameraPreviewTitle;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/take_photo")
     public MobileElement takePhotoButton;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ImageButton")
+    public MobileElement uselessTakePhotoButton;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/accept")
     public MobileElement acceptPhotoButton;
 
@@ -73,23 +75,45 @@ public class CarScorePage extends PageBase {
     @AndroidFindBy(id = "com.dds.carscore.debug:id/video_button")
     public MobileElement recordVideoButton;
 
-    @AndroidFindBy(id = "com.dds.carscore.debug:id/tire_sizes_hotspot")
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/tire_brands")
     public MobileElement tireBrands;
-    @AndroidFindBy(id = "com.dds.carscore.debug:id/tire_brand")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]")
     public MobileElement tireBrand;
-    @AndroidFindBy(id = "com.dds.carscore.debug:id/spinner_item")
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/tire_sizes")
     public MobileElement tireSizes;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/tire_size")
     public MobileElement tireSize;
-
-
-    @AndroidFindBy(id = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.widget.Spinner[3]/android.widget.TextView")
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/tread_depth")
     public MobileElement tireDepthSpinner;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/tread_depth")
     public MobileElement tireDepth;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.TextView[2]")
     public MobileElement paintOption;
+    @AndroidFindBy(className = "android.widget.RadioButton")
+    public MobileElement noOdor;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/mileage")
+    public MobileElement mileage;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/skip")
+    public MobileElement skipButton;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/close")
+    public MobileElement closeButton;
+    @AndroidFindBy(id = "android:id/button1")
+    public MobileElement alertDialogSaveButton;
+
+
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.view.ViewGroup/android.widget.TextView")
+    public MobileElement workingTab;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup/android.view.ViewGroup")
+    public MobileElement workingVehicle;
+    @AndroidFindBy(accessibility = "More options")
+    public MobileElement moreOptions;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout")
+    public MobileElement continueInspection;
+
+
+
 
 
 
