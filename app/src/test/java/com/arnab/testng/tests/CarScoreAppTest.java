@@ -55,46 +55,51 @@ public class CarScoreAppTest extends TestBase {
         //carScorePage.alertDialogYesButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.doneButton));
         carScorePage.doneButton.click();
+    }
 
+    @Test(priority = 5)
+    private void step1() {
+        // Step 1
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        fluentWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
-
-        fluentWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
+    }
 
+    @Test(priority = 6)
+    private void step2() {
+        // Step 2
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        carScorePage.takePhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+        // Step 3
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.radioButton));
         carScorePage.radioButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-
+        // Step 4
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionYes));
         carScorePage.selectionOptionYes.click();
-
+        // Step 5
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionYes));
         carScorePage.selectionOptionYes.click();
-
+        // Step 6
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionYes));
         carScorePage.selectionOptionYes.click();
-
+        // Step 7
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionYes));
         carScorePage.selectionOptionYes.click();
-
+        // Step 8
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionYes));
         carScorePage.selectionOptionYes.click();
-
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-
+        // Step 9
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionYes));
         carScorePage.selectionOptionYes.click();
-
-        // Open Hood
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
@@ -102,7 +107,7 @@ public class CarScoreAppTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
         carScorePage.placeHotspotPhoto.click();
         carScorePage.acceptPhotoButton.click();
-
+        // Step
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
@@ -134,7 +139,7 @@ public class CarScoreAppTest extends TestBase {
         carScorePage.acceptPhotoButton.click();
     }
 
-    @Test(priority = 5)
+    @Test(priority = 7)
     private void engineVideoStepTest() {
 
         // Engine Video
@@ -143,58 +148,47 @@ public class CarScoreAppTest extends TestBase {
         carScorePage.videoCheckBox2.click();
         carScorePage.videoCheckBox3.click();
         carScorePage.videoCheckBox4.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
 
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.recordVideoButton));
         carScorePage.recordVideoButton.click();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//TODO manual click
+        // DRIVER FRONT ANGLE
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
 
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
-
-        // Step 12
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
-        carScorePage.selectionOptionExcellent.click();
     }
 
-    @Test(priority = 6)
-    private void createReportTestAfterEngineVideoStep() throws InterruptedException {
-        //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        //carScorePage.takePhotoButton.click();
-        //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        //carScorePage.acceptPhotoButton.click();
-
-        //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-      //  carScorePage.takePhotoButton.click();
-        //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        //carScorePage.acceptPhotoButton.click();
-
-        // Step 12
-        //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
-        //carScorePage.selectionOptionExcellent.click();
-
-    }
-
-    @Test(priority = 7)
-    private void selectTireBrandStepTest() throws InterruptedException {
-
-        carScorePage.workingTab.click();
-        carScorePage.workingTab.click();
+    @Test(priority = 5)
+    private void openDraft() {
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
         carScorePage.workingVehicle.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.vehicleDetails));
         carScorePage.moreOptions.click();
         carScorePage.continueInspection.click();
+    }
+
+    @Test(priority = 5)
+    private void driverTest() {
+        // DRIVER
+        fluentWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        carScorePage.takePhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+    }
+
+
+    @Test(priority = 12)
+    private void selectTireBrandStepTest() throws InterruptedException {
+
+        // Step 12
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+        carScorePage.selectionOptionExcellent.click();
 
         // Select 13 - Front Tire / Tire Brand
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.tireBrands));
@@ -355,38 +349,41 @@ public class CarScoreAppTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
+    }
 
-      //  explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.uselessTakePhotoButton));
-      //  explicitWait.until(carScorePage.cameraPreviewTitle.getText().equalsIgnoreCase("PASSENGER"));
+    @Test(priority = 34)
+    private void step34Test() {
+
+        //TODO manual click passenger
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
-        //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
     }
 
-    @Test(priority = 8)
+    @Test(priority = 35)
     private void step35Test() {
-
-        carScorePage.workingTab.click();
-        carScorePage.workingTab.click();
-        carScorePage.workingTab.click();
-        carScorePage.workingVehicle.click();
-        carScorePage.moreOptions.click();
-        carScorePage.continueInspection.click();
-
         // Step 35
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
 
         carScorePage.acceptPhotoButton.click();
+    }
 
+    @Test(priority = 36)
+    private void step36Test() {
         // Step 36
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        /*explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
         carScorePage.placeHotspotPhoto.click();
-        carScorePage.acceptPhotoButton.click();*/
+        carScorePage.acceptPhotoButton.click();
+    }
+
+    @Test(priority = 37)
+    private void step37Test() {
         // Step 37
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
@@ -558,9 +555,25 @@ public class CarScoreAppTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
         carScorePage.placeHotspotPhoto.click();
         carScorePage.acceptPhotoButton.click();
-        // Step 77 Milage
+        // INSTRUMENT PANEL
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        carScorePage.takePhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+    }
+
+    @Test(priority = 77)
+    private void step77Test() {
+        // Step 77 Mileage
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.mileage));
         carScorePage.mileage.sendKeys("6");
+        carScorePage.acceptPhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        carScorePage.takePhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
+        carScorePage.placeHotspotPhoto.click();
         carScorePage.acceptPhotoButton.click();
         // Step 78
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
@@ -575,6 +588,9 @@ public class CarScoreAppTest extends TestBase {
         // Save and Close
         carScorePage.skipButton.click();
         carScorePage.closeButton.click();
+        carScorePage.alertDialogSaveButton.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
         carScorePage.workingTab.click();
     }
 

@@ -34,13 +34,21 @@
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
 
-                    <!--<include name="createReportTest" />
+                    <include name="createReportTest" />
+                    <include name="step1" />
+                    <include name="step2" />
                     <include name="engineVideoStepTest" />
-                    <include name="createReportTestAfterEngineVideoStep" />-->
+                    <include name="driverTest" />
 
-                 <!--   <include name="selectTireBrandStepTest" />-->
+                     <!--<include name="openDraft" />-->
 
+                    <include name="selectTireBrandStepTest" />
+
+                   <!-- <include name="step34Test" />-->
                     <include name="step35Test" />
+                    <include name="step36Test" />
+                    <include name="step37Test" />
+                    <include name="step77Test" />
 
                 </methods>
             </class>
