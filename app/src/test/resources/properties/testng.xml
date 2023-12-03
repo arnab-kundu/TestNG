@@ -30,7 +30,7 @@
             <class name="com.arnab.testng.tests.CarScoreAppTest">
                 <methods>
                     <include name="appLaunchSuccessfulTest" />
-                    <!--<include name="loginTest" />-->
+                    <!--<include name="appLoginTest" />-->
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
 

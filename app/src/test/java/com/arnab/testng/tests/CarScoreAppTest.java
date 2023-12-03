@@ -28,7 +28,7 @@ public class CarScoreAppTest extends TestBase {
     }
 
     @Test(priority = 0)
-    private void loginTest() {
+    private void appLoginTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.username));
         carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
         carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
@@ -48,7 +48,7 @@ public class CarScoreAppTest extends TestBase {
     }
 
     @Test(priority = 1)
-    private void createReportTest() throws InterruptedException {
+    private void createReportTest() {
         carScorePage.addVehicleButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.skipScanButton));
         carScorePage.skipScanButton.click();
