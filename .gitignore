@@ -13,5 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
-testdata.properties
+app/src/test/resources/properties/testdata.properties
 *.apk
