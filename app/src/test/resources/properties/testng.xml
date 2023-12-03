@@ -37,18 +37,91 @@
                     <include name="createReportTest" />
                     <include name="step1" />
                     <include name="step2" />
-                    <include name="engineVideoStepTest" />
-                    <include name="driverTest" />
+                    <include name="step3" />
+                    <include name="step4" />
+                    <include name="step5" />
+                    <include name="step6" />
+                    <include name="step7" />
+                    <include name="step8" />
+                    <include name="step9" />
+                    <include name="step10" />
+                    <include name="step11" />
+                    <include name="step12" />
 
                      <!--<include name="openDraft" />-->
 
-                    <include name="selectTireBrandStepTest" />
+                    <include name="selectTireBrand_Step13" />
 
-                   <!-- <include name="step34Test" />-->
-                    <include name="step35Test" />
-                    <include name="step36Test" />
-                    <include name="step37Test" />
-                    <include name="step77Test" />
+                    <include name="step14" />
+                    <include name="step20" />
+                    <include name="step21" />
+                    <include name="step22" />
+                    <include name="step23" />
+                    <include name="step24" />
+                    <include name="step25" />
+                    <include name="step26" />
+                    <include name="step27" />
+                    <include name="step28" />
+                    <include name="step29" />
+                    <include name="step30" />
+
+                    <include name="step30" />
+                    <include name="step31" />
+                    <include name="step32" />
+                    <include name="step33" />
+                    <include name="step34" />
+                    <include name="step35" />
+                    <include name="step36" />
+                    <include name="step37" />
+                    <include name="step38" />
+                    <include name="step39" />
+                    <include name="step40" />
+
+                    <include name="step41" />
+                    <include name="step42" />
+                    <include name="step43" />
+                    <include name="step44" />
+                    <include name="step45" />
+                    <include name="step46" />
+                    <include name="step47" />
+                    <include name="step48" />
+                    <include name="step49" />
+                    <include name="step50" />
+
+                    <include name="step51" />
+                    <include name="step52" />
+                    <include name="step53" />
+                    <include name="step54" />
+                    <include name="step55" />
+                    <include name="step56" />
+                    <include name="step57" />
+                    <include name="step58" />
+                    <include name="step59" />
+                    <include name="step60" />
+
+                    <include name="step61" />
+                    <include name="step62" />
+                    <include name="step63" />
+                    <include name="step64" />
+                    <include name="step65" />
+                    <include name="step66" />
+                    <include name="step67" />
+                    <include name="step68" />
+                    <include name="step69" />
+                    <include name="step70" />
+
+                    <include name="step71" />
+                    <include name="step72" />
+                    <include name="step73" />
+                    <include name="step74" />
+                    <include name="step75" />
+                    <include name="step76" />
+                    <include name="step77" />
+                    <include name="step78" />
+                    <include name="step79" />
+                    <include name="step80" />
+
+                    <include name="saveAndClose" />
 
                 </methods>
             </class>
