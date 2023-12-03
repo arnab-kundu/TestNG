@@ -34,7 +34,10 @@
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
 
+                    <!--<include name="openDraft" />-->
+                    <!-- OR -->
                     <include name="createReportTest" />
+
                     <include name="step1" />
                     <include name="step2" />
                     <include name="step3" />
@@ -45,18 +48,19 @@
                     <include name="step8" />
                     <include name="step9" />
                     <include name="step10" />
+
                     <include name="step11" />
                     <include name="step11_Ok" />
                     <include name="step12" />
-
                     <include name="driverTest" />
                     <include name="driverTest2" />
-
-                     <!--<include name="openDraft" />-->
-
                     <include name="selectTireBrand_Step13" />
-
                     <include name="step14" />
+                    <include name="step15" />
+                    <include name="step16" />
+                    <include name="step17" />
+                    <include name="step18" />
+                    <include name="step19" />
                     <include name="step20" />
 
                     <include name="step21" />
@@ -75,6 +79,7 @@
                     <include name="step32" />
                     <include name="step33" />
                     <include name="step34" />
+                    <include name="step34_1" />
                     <include name="step35" />
                     <include name="step36" />
                     <include name="step37" />
