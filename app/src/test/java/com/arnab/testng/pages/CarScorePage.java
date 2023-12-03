@@ -49,6 +49,9 @@ public class CarScorePage extends PageBase {
     public MobileElement uselessTakePhotoButton;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/accept")
     public MobileElement acceptPhotoButton;
+    @AndroidFindBy(id = "android:id/pause")
+    public MobileElement playPauseButton;
+
 
     @AndroidFindBy(className = "android.widget.RadioButton")
     public MobileElement radioButton;

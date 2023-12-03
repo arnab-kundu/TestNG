@@ -29,7 +29,7 @@
 
             <class name="com.arnab.testng.tests.CarScoreAppTest">
                 <methods>
-                    <include name="openAppTest" />
+                    <include name="appLaunchSuccessfulTest" />
                     <!--<include name="loginTest" />-->
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
@@ -46,7 +46,11 @@
                     <include name="step9" />
                     <include name="step10" />
                     <include name="step11" />
+                    <include name="step11_Ok" />
                     <include name="step12" />
+
+                    <include name="driverTest" />
+                    <include name="driverTest2" />
 
                      <!--<include name="openDraft" />-->
 
@@ -54,6 +58,7 @@
 
                     <include name="step14" />
                     <include name="step20" />
+
                     <include name="step21" />
                     <include name="step22" />
                     <include name="step23" />
