@@ -29,6 +29,9 @@ public class CarScorePage extends PageBase {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView[1]")
     public MobileElement dealerName;
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[8]")
+    public MobileElement dealerNameAppleAuraHonda;
+
     @AndroidFindBy(id = "com.dds.carscore.debug:id/toolbar_title")
     public MobileElement dealerPageHeader;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/add_vehicle")
@@ -39,6 +42,12 @@ public class CarScorePage extends PageBase {
     public MobileElement vehicleVinEditText;
     @AndroidFindBy(id = "android:id/button1")
     public MobileElement alertDialogYesButton;
+
+    @AndroidFindBy(id = "android:id/button2")
+    public MobileElement alertDialogStandardButton;
+
+    @AndroidFindBy(id = "android:id/button1")
+    public MobileElement alertDialog360Button;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/submit")
     public MobileElement doneButton;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/view_title")
