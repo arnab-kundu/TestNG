@@ -20,9 +20,6 @@ public class Spin360Page extends PageBase {
     @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/tvLogout1")
     public MobileElement exit;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/edit")
-    public MobileElement captureVideo1;
-
     @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/capture_Video")
     public MobileElement captureVideo;
 

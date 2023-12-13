@@ -15,7 +15,7 @@ public class CreateDS360ReportTest extends TestBase {
     @BeforeTest
     @Override
     public void setUpPage() {
-        System.out.println("Inside MainActivityTest Class...");
+        System.out.println("Inside CreateDS360ReportTest Class...");
         carScorePage = new CarScorePage(driver);
         spin360Page = new Spin360Page(driver);
     }
