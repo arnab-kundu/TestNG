@@ -32,6 +32,9 @@ public class CarScorePage extends PageBase {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[8]")
     public MobileElement dealerNameAppleAuraHonda;
 
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[5]")
+    public MobileElement dealerNameACME_SuperCars;
+
     @AndroidFindBy(id = "com.dds.carscore.debug:id/toolbar_title")
     public MobileElement dealerPageHeader;
     @AndroidFindBy(id = "com.dds.carscore.debug:id/add_vehicle")
@@ -113,7 +116,8 @@ public class CarScorePage extends PageBase {
     @AndroidFindBy(id = "android:id/button1")
     public MobileElement alertDialogSaveButton;
 
-
+    @AndroidFindBy(id = "android:id/button1")
+    public MobileElement alertDialogTakePhotoButton;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.view.ViewGroup/android.widget.TextView")
     public MobileElement workingTab;

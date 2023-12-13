@@ -225,6 +225,37 @@
                 </methods>
             </class>
 
+            <!--DS360 Report-->
+            <class name="com.arnab.testng.tests.CreateDS360ReportTest">
+                <methods>
+                    <include name="appLaunchSuccessfulTest" />
+                    <!--<include name="appLoginTest" />-->
+                    <include name="dealershipDisplayedTest" />
+                    <include name="openDealershipTest" />
+
+                    <!--<include name="openDraft" />-->
+                    <!-- OR -->
+                    <include name="createReportTest" />
+
+                    <include name="spin360Steps" />
+
+                    <include name="VIN" />
+                    <include name="keysSafeVisibilityCheckTest" />
+                    <include name="KEYS" />
+                    <include name="trunkSafeVisibilityCheckTest" />
+                    <include name="INTERIOR_TRUNK_3RD_ROW" />
+                    <include name="roofSafeVisibilityCheckTest" />
+                    <include name="ROOF" />
+                    <include name="interiorRearSafeVisibilityCheckTest" />
+                    <include name="INTERIOR_REAR" />
+                    <include name="instrumentPanelSafeVisibilityCheckTest" />
+                    <include name="instrumentPanel" />
+
+                    <include name="saveAndClose" />
+
+                </methods>
+            </class>
+
         </classes>
     </test>
 </suite>

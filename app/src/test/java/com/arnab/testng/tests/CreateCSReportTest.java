@@ -674,7 +674,6 @@ public class CreateCSReportTest extends TestBase {
     @Test(priority = 60)
     private void saveAndClose() {
         // Save and Close
-        carScorePage.skipButton.click();
         carScorePage.closeButton.click();
         carScorePage.alertDialogSaveButton.click();
         carScorePage.workingTab.click();
