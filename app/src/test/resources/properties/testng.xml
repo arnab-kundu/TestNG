@@ -149,7 +149,95 @@
                     <!-- OR -->
                     <include name="createReportTest" />
 
-                    <include name="openSpin360Steps" />
+                    <include name="step1_0_VIN" />
+                    <include name="step1_1_Number_of_keys" />
+                    <include name="step1_2_OpenHood" />
+                    <include name="step1_3_DriverFrontAngle" />
+                    <include name="step1_4_Driver" />
+                    <include name="step2" />
+                    <include name="step3_selectTireBrand" />
+                    <include name="step4" />
+                    <include name="step5" />
+                    <include name="step6" />
+                    <include name="step7" />
+                    <include name="step8" />
+                    <include name="step9" />
+                    <include name="step10" />
+
+                    <include name="step11" />
+                    <include name="step12" />
+                    <include name="step13" />
+                    <include name="step14" />
+                    <include name="step15" />
+                    <include name="step16" />
+                    <include name="step17" />
+                    <include name="step17_1" />
+                    <include name="step17_2" />
+                    <include name="step18" />
+                    <include name="step19" />
+                    <include name="step20" />
+
+                    <include name="step21" />
+                    <include name="step22" />
+                    <include name="step23" />
+                    <include name="step24" />
+                    <include name="step25" />
+                    <include name="step26" />
+                    <include name="step27" />
+                    <include name="step28" />
+                    <include name="step29" />
+                    <include name="step30" />
+
+                    <include name="step30" />
+                    <include name="step31" />
+                    <include name="step32" />
+                    <include name="step33" />
+                    <include name="step34" />
+                    <include name="step35" />
+                    <include name="step36" />
+                    <include name="step37" />
+                    <include name="step38" />
+                    <include name="step39" />
+                    <include name="step40" />
+
+                    <include name="step41" />
+                    <include name="step42" />
+                    <include name="step43" />
+                    <include name="step44" />
+                    <include name="step45" />
+                    <include name="step46" />
+                    <include name="step47" />
+                    <include name="step48" />
+                    <include name="step49" />
+                    <include name="step50" />
+
+                    <include name="step51" />
+                    <include name="step52" />
+                    <include name="step53" />
+                    <include name="step54" />
+                    <include name="step55" />
+                    <include name="step56" />
+                    <include name="step57" />
+                    <include name="step58" />
+                    <include name="step59" />
+                    <include name="saveAndClose" />
+
+                </methods>
+            </class>
+
+            <!--CS360 Report-->
+            <class name="com.arnab.testng.tests.CreateCS360ReportTest">
+                <methods>
+                    <include name="appLaunchSuccessfulTest" />
+                    <!--<include name="appLoginTest" />-->
+                    <include name="dealershipDisplayedTest" />
+                    <include name="openDealershipTest" />
+
+                    <!--<include name="openDraft" />-->
+                    <!-- OR -->
+                    <include name="createReportTest" />
+
+                    <include name="spin360Steps" />
 
                     <include name="step1_0_VIN" />
                     <include name="step1_1_Number_of_keys" />
@@ -213,97 +301,6 @@
                     <include name="step52" />
                     <include name="step53" />
                     <include name="step531" />
-                    <include name="step54" />
-                    <include name="step55" />
-                    <include name="step56" />
-                    <include name="step57" />
-                    <include name="step58" />
-                    <include name="step59" />
-                    <include name="saveAndClose" />
-
-                </methods>
-            </class>
-
-            <!--CS360 Report-->
-            <class name="com.arnab.testng.tests.CreateCS360ReportTest">
-                <methods>
-                    <include name="appLaunchSuccessfulTest" />
-                    <!--<include name="appLoginTest" />-->
-                    <include name="dealershipDisplayedTest" />
-                    <include name="openDealershipTest" />
-
-                    <!--<include name="openDraft" />-->
-                    <!-- OR -->
-                    <include name="createReportTest" />
-
-                    <include name="spin360Steps" />
-
-                    <include name="step1_0_VIN" />
-                    <include name="step1_1_Number_of_keys" />
-                    <include name="step1_2_OpenHood" />
-                    <!--TODO-->
-                    <include name="step1_3_DriverFrontAngle" />
-                    <include name="step1_4_Driver" />
-                    <include name="step2" />
-                    <include name="step3_selectTireBrand" />
-                    <include name="step4" />
-                    <include name="step5" />
-                    <include name="step6" />
-                    <include name="step7" />
-                    <include name="step8" />
-                    <include name="step9" />
-                    <include name="step10" />
-
-                    <include name="step11" />
-                    <include name="step12" />
-                    <include name="step13" />
-                    <include name="step14" />
-                    <include name="step15" />
-                    <include name="step16" />
-                    <include name="step17" />
-                    <include name="step17_1" />
-                    <include name="step17_2" />
-                    <include name="step18" />
-                    <include name="step19" />
-                    <include name="step20" />
-
-                    <include name="step21" />
-                    <include name="step22" />
-                    <include name="step23" />
-                    <include name="step24" />
-                    <include name="step25" />
-                    <include name="step26" />
-                    <include name="step27" />
-                    <include name="step28" />
-                    <include name="step29" />
-                    <include name="step30" />
-
-                    <include name="step30" />
-                    <include name="step31" />
-                    <include name="step32" />
-                    <include name="step33" />
-                    <include name="step34" />
-                    <include name="step35" />
-                    <include name="step36" />
-                    <include name="step37" />
-                    <include name="step38" />
-                    <include name="step39" />
-                    <include name="step40" />
-
-                    <include name="step41" />
-                    <include name="step42" />
-                    <include name="step43" />
-                    <include name="step44" />
-                    <include name="step45" />
-                    <include name="step46" />
-                    <include name="step47" />
-                    <include name="step48" />
-                    <include name="step49" />
-                    <include name="step50" />
-
-                    <include name="step51" />
-                    <include name="step52" />
-                    <include name="step53" />
                     <include name="step54" />
                     <include name="step55" />
                     <include name="step56" />
