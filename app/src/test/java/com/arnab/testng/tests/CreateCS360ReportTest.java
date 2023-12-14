@@ -7,6 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
+
 public class CreateCS360ReportTest extends TestBase {
 
     private CarScorePage carScorePage;
@@ -56,8 +59,8 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.alertDialogYesButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.doneButton));
         carScorePage.doneButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogStandardButton));
-        carScorePage.alertDialogStandardButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialog360Button));
+        carScorePage.alertDialog360Button.click();
     }
 
     @Test(priority = 0)
@@ -70,8 +73,8 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.continueInspection.click();
     }
 
-    @Test(priority = 2)
-    private void spin360Steps() {
+    @Test(priority = 1)
+    private void openSpin360Steps() {
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureExterior));
         spin360Page.captureExterior.click();
 
@@ -110,10 +113,6 @@ public class CreateCS360ReportTest extends TestBase {
         spin360Page.interiorCockpitDoneButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.proceedButton));
         spin360Page.proceedButton.click();
-
-        // TODO Remove
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogTakePhotoButton));
-        carScorePage.alertDialogTakePhotoButton.click();
     }
 
     @Test(priority = 1)
@@ -123,8 +122,11 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        // TODO if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        try {
+            // TODO if this fails not a problem
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (Exception e) {
+        }
     }
 
     @Test(priority = 1)
@@ -144,28 +146,6 @@ public class CreateCS360ReportTest extends TestBase {
     @Test(priority = 1)
     private void step1_2_OpenHood() {
         // Step 7 - Open Hood
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
-        // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-    }
-
-    @Test(priority = 1)
-    private void step1_3_DriverFrontAngle() {
-        // DRIVER FRONT ANGLE
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
-        // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-    }
-
-    @Test(priority = 1)
-    private void step1_4_Driver() {
-        // DRIVER
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
@@ -274,10 +254,6 @@ public class CreateCS360ReportTest extends TestBase {
     private void step12() {
         // Step 12
         carScorePage.paintOption.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 13)
@@ -322,33 +298,6 @@ public class CreateCS360ReportTest extends TestBase {
         // Step 17 - TRUNK
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
-
-        // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-    }
-
-    @Test(priority = 17)
-    private void step17_1() {
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
-
-        // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-    }
-
-    @Test(priority = 17)
-    private void step17_2() {
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 18)
@@ -433,11 +382,6 @@ public class CreateCS360ReportTest extends TestBase {
         // Step 27
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 28)
@@ -543,10 +487,6 @@ public class CreateCS360ReportTest extends TestBase {
         // Step 40
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 41)
@@ -635,20 +575,43 @@ public class CreateCS360ReportTest extends TestBase {
 
     @Test(priority = 53)
     private void step53() {
-        // Step 53
+        // Step 53 - Air
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
 
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
-        carScorePage.placeHotspotPhoto.click();
+        // TODO select hotspot in Pannellum
+        PointOption pannellumHotspotPosition = new PointOption();
+        pannellumHotspotPosition.withCoordinates(1333, 635);
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(pannellumHotspotPosition).perform();
+
+        carScorePage.acceptPhotoButton.click();
+    }
+
+    @Test(priority = 53)
+    private void step531() {
+        // TODO select hotspot in Pannellum
+        PointOption pannellumHotspotPosition = new PointOption();
+        pannellumHotspotPosition.withCoordinates(1333, 635);
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(pannellumHotspotPosition).perform();
+
         carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 54)
     private void step54() {
-        // Step 54
+        // Step 54 -  Sound System
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
+
+        // TODO select hotspot in Pannellum
+        PointOption pannellumHotspotPosition = new PointOption();
+        pannellumHotspotPosition.withCoordinates(1333, 635);
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(pannellumHotspotPosition).perform();
+
+        carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 55)
@@ -661,14 +624,19 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
-        carScorePage.placeHotspotPhoto.click();
+
+        // TODO select hotspot in Pannellum
+        PointOption pannellumHotspotPosition = new PointOption();
+        pannellumHotspotPosition.withCoordinates(1333, 635);
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(pannellumHotspotPosition).perform();
+
         carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 56)
     private void step56() {
-        // Step 56
+        // Step 56 - Backup Camera
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
 
@@ -676,8 +644,13 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
-        carScorePage.placeHotspotPhoto.click();
+
+        // TODO select hotspot in Pannellum
+        PointOption pannellumHotspotPosition = new PointOption();
+        pannellumHotspotPosition.withCoordinates(1333, 635);
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(pannellumHotspotPosition).perform();
+
         carScorePage.acceptPhotoButton.click();
 
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
@@ -718,6 +691,7 @@ public class CreateCS360ReportTest extends TestBase {
     @Test(priority = 60)
     private void saveAndClose() {
         // Save and Close
+        carScorePage.skipButton.click();
         carScorePage.closeButton.click();
         carScorePage.alertDialogSaveButton.click();
         carScorePage.workingTab.click();

@@ -37,7 +37,7 @@ public class PropertiesParser {
 
                 FileInputStream testDataFile = new FileInputStream(
                         //System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\testData.properties"); // Windows
-                        System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\testData.properties"); // Mac
+                        System.getProperty("user.dir") + "/src/test/resources/properties/testData.properties"); // Mac
                 testData = new Properties();
                 testData.load(testDataFile);
             } catch (IOException e) {

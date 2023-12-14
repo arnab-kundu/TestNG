@@ -149,11 +149,11 @@
                     <!-- OR -->
                     <include name="createReportTest" />
 
+                    <include name="openSpin360Steps" />
+
                     <include name="step1_0_VIN" />
                     <include name="step1_1_Number_of_keys" />
                     <include name="step1_2_OpenHood" />
-                    <include name="step1_3_DriverFrontAngle" />
-                    <include name="step1_4_Driver" />
                     <include name="step2" />
                     <include name="step3_selectTireBrand" />
                     <include name="step4" />
@@ -171,8 +171,6 @@
                     <include name="step15" />
                     <include name="step16" />
                     <include name="step17" />
-                    <include name="step17_1" />
-                    <include name="step17_2" />
                     <include name="step18" />
                     <include name="step19" />
                     <include name="step20" />
@@ -214,6 +212,7 @@
                     <include name="step51" />
                     <include name="step52" />
                     <include name="step53" />
+                    <include name="step531" />
                     <include name="step54" />
                     <include name="step55" />
                     <include name="step56" />
