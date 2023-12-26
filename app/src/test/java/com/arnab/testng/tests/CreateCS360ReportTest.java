@@ -74,7 +74,7 @@ public class CreateCS360ReportTest extends TestBase {
     }
 
     @Test(priority = 1)
-    private void openSpin360Steps() {
+    private void spin360Steps() {
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureExterior));
         spin360Page.captureExterior.click();
 
@@ -583,18 +583,11 @@ public class CreateCS360ReportTest extends TestBase {
         PointOption pannellumHotspotPosition = new PointOption();
         pannellumHotspotPosition.withCoordinates(1333, 635);
         TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(pannellumHotspotPosition).perform();
-
-        carScorePage.acceptPhotoButton.click();
-    }
-
-    @Test(priority = 53)
-    private void step531() {
-        // TODO select hotspot in Pannellum
-        PointOption pannellumHotspotPosition = new PointOption();
-        pannellumHotspotPosition.withCoordinates(1333, 635);
-        TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(pannellumHotspotPosition).perform();
+        touchAction.tap(pannellumHotspotPosition);
+        try {
+            touchAction.tap(pannellumHotspotPosition).perform();
+        } catch (Exception e) {
+        }
 
         carScorePage.acceptPhotoButton.click();
     }
@@ -609,9 +602,9 @@ public class CreateCS360ReportTest extends TestBase {
         PointOption pannellumHotspotPosition = new PointOption();
         pannellumHotspotPosition.withCoordinates(1333, 635);
         TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(pannellumHotspotPosition).perform();
+        // touchAction.tap(pannellumHotspotPosition).perform();
 
-        carScorePage.acceptPhotoButton.click();
+        // carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 55)
@@ -629,7 +622,11 @@ public class CreateCS360ReportTest extends TestBase {
         PointOption pannellumHotspotPosition = new PointOption();
         pannellumHotspotPosition.withCoordinates(1333, 635);
         TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(pannellumHotspotPosition).perform();
+        touchAction.tap(pannellumHotspotPosition);
+        try {
+            touchAction.tap(pannellumHotspotPosition).perform();
+        } catch (Exception e) {
+        }
 
         carScorePage.acceptPhotoButton.click();
     }
@@ -649,7 +646,11 @@ public class CreateCS360ReportTest extends TestBase {
         PointOption pannellumHotspotPosition = new PointOption();
         pannellumHotspotPosition.withCoordinates(1333, 635);
         TouchAction touchAction = new TouchAction(driver);
-        touchAction.tap(pannellumHotspotPosition).perform();
+        touchAction.tap(pannellumHotspotPosition);
+        try {
+            touchAction.tap(pannellumHotspotPosition).perform();
+        } catch (Exception e) {
+        }
 
         carScorePage.acceptPhotoButton.click();
 

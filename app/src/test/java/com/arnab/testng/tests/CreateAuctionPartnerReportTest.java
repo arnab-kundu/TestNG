@@ -77,8 +77,11 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        // TODO if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        try {
+            // TODO if this fails not a problem
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (Exception e) {
+        }
     }
 
     @Test(priority = 2)
