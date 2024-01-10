@@ -6,11 +6,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.offset.PointOption;
-
 public class CreateCSReportTest extends TestBase {
 
     private CarScorePage carScorePage;
