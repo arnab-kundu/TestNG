@@ -2,6 +2,7 @@ package com.arnab.testng.tests;
 
 import com.arnab.testng.pages.CarScorePage;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -75,7 +76,10 @@ public class CreateCSReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
         // TODO if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (StaleElementReferenceException e) {
+        }
     }
 
     @Test(priority = 1)
@@ -100,7 +104,10 @@ public class CreateCSReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
         // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (StaleElementReferenceException e) {
+        }
     }
 
     @Test(priority = 1)
@@ -111,7 +118,10 @@ public class CreateCSReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
         // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (StaleElementReferenceException e) {
+        }
     }
 
     @Test(priority = 1)
@@ -280,7 +290,10 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.acceptPhotoButton.click();
 
         // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (StaleElementReferenceException e) {
+        }
     }
 
     @Test(priority = 17)
@@ -291,7 +304,10 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.acceptPhotoButton.click();
 
         // TODO - if this fails not a problem
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (StaleElementReferenceException e) {
+        }
     }
 
     @Test(priority = 17)
