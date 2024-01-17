@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+/** @noinspection DefaultAnnotationParam */
 public class CreateCSReportTest extends TestBase {
 
     private CarScorePage carScorePage;
@@ -79,6 +80,7 @@ public class CreateCSReportTest extends TestBase {
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -107,6 +109,7 @@ public class CreateCSReportTest extends TestBase {
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -121,6 +124,7 @@ public class CreateCSReportTest extends TestBase {
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -293,6 +297,7 @@ public class CreateCSReportTest extends TestBase {
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -307,6 +312,7 @@ public class CreateCSReportTest extends TestBase {
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 

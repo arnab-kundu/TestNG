@@ -3,6 +3,7 @@ package com.arnab.testng.tests;
 import com.arnab.testng.pages.CarScorePage;
 import com.arnab.testng.pages.Spin360Page;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -10,6 +11,7 @@ import org.testng.annotations.Test;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
+/** @noinspection DefaultAnnotationParam, rawtypes */
 public class CreateCS360ReportTest extends TestBase {
 
     private CarScorePage carScorePage;
@@ -125,7 +127,8 @@ public class CreateCS360ReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (Exception e) {
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -580,13 +583,14 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.selectionOptionExcellent.click();
 
         // TODO select hotspot in Pannellum
-        PointOption pannellumHotspotPosition = new PointOption();
+        PointOption pannellumHotspotPosition = new PointOption<>();
         pannellumHotspotPosition.withCoordinates(1333, 635);
-        TouchAction touchAction = new TouchAction(driver);
+        TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(pannellumHotspotPosition);
         try {
             touchAction.tap(pannellumHotspotPosition).perform();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
         carScorePage.acceptPhotoButton.click();
@@ -597,14 +601,6 @@ public class CreateCS360ReportTest extends TestBase {
         // Step 54 -  Sound System
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
-
-        // TODO select hotspot in Pannellum
-        PointOption pannellumHotspotPosition = new PointOption();
-        pannellumHotspotPosition.withCoordinates(1333, 635);
-        TouchAction touchAction = new TouchAction(driver);
-        // touchAction.tap(pannellumHotspotPosition).perform();
-
-        // carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 55)
@@ -619,13 +615,14 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.acceptPhotoButton.click();
 
         // TODO select hotspot in Pannellum
-        PointOption pannellumHotspotPosition = new PointOption();
+        PointOption pannellumHotspotPosition = new PointOption<>();
         pannellumHotspotPosition.withCoordinates(1333, 635);
-        TouchAction touchAction = new TouchAction(driver);
+        TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(pannellumHotspotPosition);
         try {
             touchAction.tap(pannellumHotspotPosition).perform();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
         carScorePage.acceptPhotoButton.click();
@@ -643,13 +640,14 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.acceptPhotoButton.click();
 
         // TODO select hotspot in Pannellum
-        PointOption pannellumHotspotPosition = new PointOption();
+        PointOption pannellumHotspotPosition = new PointOption<>();
         pannellumHotspotPosition.withCoordinates(1333, 635);
-        TouchAction touchAction = new TouchAction(driver);
+        TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(pannellumHotspotPosition);
         try {
             touchAction.tap(pannellumHotspotPosition).perform();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
 
         carScorePage.acceptPhotoButton.click();
@@ -699,6 +697,4 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
     }
-
-
 }

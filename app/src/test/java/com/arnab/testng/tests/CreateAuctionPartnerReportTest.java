@@ -2,6 +2,7 @@ package com.arnab.testng.tests;
 
 import com.arnab.testng.pages.CarScorePage;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
+/** @noinspection DefaultAnnotationParam, rawtypes */
 public class CreateAuctionPartnerReportTest extends TestBase {
 
     private CarScorePage carScorePage;
@@ -54,8 +56,8 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         carScorePage.skipScanButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.vehicleVinEditText));
         carScorePage.vehicleVinEditText.sendKeys(testData.getProperty("VIN"));
-        //fluentWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogYesButton));
-        //carScorePage.alertDialogYesButton.click();
+        // fluentWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogYesButton));
+        // carScorePage.alertDialogYesButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.doneButton));
         carScorePage.doneButton.click();
     }
@@ -80,7 +82,8 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (Exception e) {
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -206,10 +209,10 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         //TODO manual click videoCaptureDone button
         //  button UI element not found in appium
         //  not able to click using touchAction
-        PointOption videoCaptureDoneButtonPosition = new PointOption();
+        PointOption videoCaptureDoneButtonPosition = new PointOption<>();
         // videoCaptureDone button: bounds: [2007,458][2172,623]
         videoCaptureDoneButtonPosition.withCoordinates(2077, 554);
-        TouchAction touchAction = new TouchAction(driver);
+        TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(videoCaptureDoneButtonPosition);
         touchAction.tap(videoCaptureDoneButtonPosition).perform();
     }
@@ -482,6 +485,7 @@ public class CreateAuctionPartnerReportTest extends TestBase {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
             carScorePage.acceptPhotoButton.click();
         } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 

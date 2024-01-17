@@ -3,10 +3,12 @@ package com.arnab.testng.tests;
 import com.arnab.testng.pages.CarScorePage;
 import com.arnab.testng.pages.Spin360Page;
 
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+/** @noinspection DefaultAnnotationParam*/
 public class CreateDS360ReportTest extends TestBase {
 
     private CarScorePage carScorePage;
@@ -130,7 +132,8 @@ public class CreateDS360ReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (Exception e) {
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -148,7 +151,8 @@ public class CreateDS360ReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (Exception e) {
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -166,8 +170,8 @@ public class CreateDS360ReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (Exception e) {
-
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -187,8 +191,8 @@ public class CreateDS360ReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (Exception e) {
-
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -206,8 +210,8 @@ public class CreateDS360ReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (Exception e) {
-
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -230,6 +234,4 @@ public class CreateDS360ReportTest extends TestBase {
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
     }
-
-
 }
