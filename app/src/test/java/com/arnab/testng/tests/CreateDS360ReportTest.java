@@ -119,8 +119,12 @@ public class CreateDS360ReportTest extends TestBase {
     @Test(priority = 3)
     private void VIN() {
         // VIN
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogTakePhotoButton));
-        carScorePage.alertDialogTakePhotoButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogTakePhotoButton));
+            carScorePage.alertDialogTakePhotoButton.click();
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
+        }
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));

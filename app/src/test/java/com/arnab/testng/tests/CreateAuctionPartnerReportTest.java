@@ -206,12 +206,16 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.playPauseButton));
 
-        //TODO manual click videoCaptureDone button
-        //  button UI element not found in appium
-        //  not able to click using touchAction
+        // TODO Id not found for videoCaptureDone button.
+        //  So, Find videoCaptureDoneButtonPosition's bounds from Appium for your device or emulator.
+        //  And use PointOption & TouchAction to click that button.
         PointOption videoCaptureDoneButtonPosition = new PointOption<>();
-        // videoCaptureDone button: bounds: [2007,458][2172,623]
+        /* videoCaptureDone button: bounds: [1857,465][2007,615] Macbook Air */
+        // videoCaptureDoneButtonPosition.withCoordinates(2007, 554);
+
+        /* videoCaptureDone button: bounds: [2007,458][2172,623] Macbook Pro */
         videoCaptureDoneButtonPosition.withCoordinates(2077, 554);
+
         TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(videoCaptureDoneButtonPosition);
         touchAction.tap(videoCaptureDoneButtonPosition).perform();
