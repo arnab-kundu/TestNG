@@ -129,6 +129,25 @@ public class CarScorePage extends PageBase {
     public MobileElement continueInspection;
 
 
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/non_standard_vin")
+    public MobileElement nonStandardVinButton;
+
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/vehicle_year")
+    public MobileElement vehicleYear;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/vehicle_make")
+    public MobileElement vehicleMake;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/vehicle_model")
+    public MobileElement vehicleModel;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/vehicle_trim")
+    public MobileElement vehicleTrim;
+    @AndroidFindBy(id = "com.dds.carscore.debug:id/vehicle_style")
+    public MobileElement vehicleStyle;
+
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]")
+    public MobileElement spinnerItem;
+
+
+
 
 
 
