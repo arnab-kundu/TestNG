@@ -1,6 +1,7 @@
 package com.arnab.testng.tests;
 
 import com.arnab.testng.pages.CarScorePage;
+import com.arnab.testng.pages.CarScorePageQA;
 
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,13 +16,13 @@ import io.appium.java_client.touch.offset.PointOption;
 /** @noinspection DefaultAnnotationParam, rawtypes */
 public class NonStandardVinAuctionPartnerReportTest extends TestBase {
 
-    private CarScorePage carScorePage;
+    private CarScorePageQA carScorePage;
 
     @BeforeTest
     @Override
     public void setUpPage() {
         System.out.println("Inside CreateAuctionPartnerReportTest Class...");
-        carScorePage = new CarScorePage(driver);
+        carScorePage = new CarScorePageQA(driver);
     }
 
     @Test(priority = 0)
@@ -56,11 +57,11 @@ public class NonStandardVinAuctionPartnerReportTest extends TestBase {
         carScorePage.skipScanButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.vehicleVinEditText));
 
-        carScorePage.vehicleVinEditText.sendKeys("XYZ");
+        carScorePage.vehicleVinEditText.sendKeys(testData.getProperty("NON_STANDARD_VIN"));
         carScorePage.nonStandardVinButton.click();
 
         carScorePage.vehicleYear.click();
-        carScorePage.spinnerItem.click();
+        carScorePage.spinnerYearItem2021.click();
 
         carScorePage.vehicleMake.click();
         carScorePage.spinnerItem.click();
@@ -73,6 +74,9 @@ public class NonStandardVinAuctionPartnerReportTest extends TestBase {
 
         carScorePage.vehicleStyle.click();
         carScorePage.spinnerItem.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.doneButton));
+        carScorePage.doneButton.click();
     }
 
     @Test(priority = 0)
