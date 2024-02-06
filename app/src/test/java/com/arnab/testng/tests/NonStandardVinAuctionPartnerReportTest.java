@@ -3,6 +3,7 @@ package com.arnab.testng.tests;
 import com.arnab.testng.pages.CarScorePage;
 import com.arnab.testng.pages.CarScorePageQA;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
@@ -17,6 +18,7 @@ import io.appium.java_client.touch.offset.PointOption;
 public class NonStandardVinAuctionPartnerReportTest extends TestBase {
 
     private CarScorePageQA carScorePage;
+    private Point acceptPhotoButtonPoint;
 
     @BeforeTest
     @Override
@@ -200,8 +202,16 @@ public class NonStandardVinAuctionPartnerReportTest extends TestBase {
         carScorePage.selectionOptionExcellent.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
+
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+
+        /* Save point for the next step */
+        acceptPhotoButtonPoint = carScorePage.acceptPhotoButton.getCenter();
+        System.out.println("X: " + acceptPhotoButtonPoint.x);
+        System.out.println("Y: " + acceptPhotoButtonPoint.y);
+
         carScorePage.acceptPhotoButton.click();
+
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
         carScorePage.placeHotspotPhoto.click();
         carScorePage.acceptPhotoButton.click();
@@ -231,7 +241,8 @@ public class NonStandardVinAuctionPartnerReportTest extends TestBase {
         // videoCaptureDoneButtonPosition.withCoordinates(2007, 554);
 
         /* videoCaptureDone button: bounds: [2007,458][2172,623] Macbook Pro */
-        videoCaptureDoneButtonPosition.withCoordinates(2077, 554);
+        // videoCaptureDoneButtonPosition.withCoordinates(2077, 554);
+        videoCaptureDoneButtonPosition.withCoordinates(acceptPhotoButtonPoint.x, acceptPhotoButtonPoint.y);
 
         TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(videoCaptureDoneButtonPosition);
