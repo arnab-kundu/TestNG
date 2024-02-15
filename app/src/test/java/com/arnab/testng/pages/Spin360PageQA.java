@@ -4,9 +4,9 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class Spin360Page extends PageBase {
+public class Spin360PageQA extends PageBase {
 
-    public Spin360Page(AppiumDriver<MobileElement> driver) {
+    public Spin360PageQA(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 

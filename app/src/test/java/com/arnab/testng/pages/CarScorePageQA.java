@@ -53,6 +53,8 @@ public class CarScorePageQA extends PageBase {
     public MobileElement alertDialog360Button;
     @AndroidFindBy(id = "com.dds.carscore.qa:id/submit")
     public MobileElement doneButton;
+    @AndroidFindBy(id = "com.dds.carscore.qa:id/continue_inspection")
+    public MobileElement continueButton;
     @AndroidFindBy(id = "com.dds.carscore.qa:id/view_title")
     public MobileElement cameraPreviewTitle;
     @AndroidFindBy(id = "com.dds.carscore.qa:id/take_photo")

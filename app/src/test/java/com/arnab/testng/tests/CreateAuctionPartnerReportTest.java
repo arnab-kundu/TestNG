@@ -1,6 +1,7 @@
 package com.arnab.testng.tests;
 
 import com.arnab.testng.pages.CarScorePage;
+import com.arnab.testng.pages.CarScorePageQA;
 
 import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -16,14 +17,14 @@ import io.appium.java_client.touch.offset.PointOption;
 /** @noinspection DefaultAnnotationParam, rawtypes */
 public class CreateAuctionPartnerReportTest extends TestBase {
 
-    private CarScorePage carScorePage;
+    private CarScorePageQA carScorePage;
     private Point acceptPhotoButtonPoint;
 
     @BeforeTest
     @Override
     public void setUpPage() {
         System.out.println("Inside CreateAuctionPartnerReportTest Class...");
-        carScorePage = new CarScorePage(driver);
+        carScorePage = new CarScorePageQA(driver);
     }
 
     @Test(priority = 0)
@@ -62,6 +63,8 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         // carScorePage.alertDialogYesButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.doneButton));
         carScorePage.doneButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueButton));
+        carScorePage.continueButton.click();
     }
 
     @Test(priority = 0)

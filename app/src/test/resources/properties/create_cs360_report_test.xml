@@ -14,7 +14,7 @@
                     <!--<include name="openDraft" />-->
                     <!-- OR -->
                     <include name="createReportTest" />
-
+                    <include name="permissionSpin360App" />
                     <include name="spin360Steps" />
 
                     <include name="step1_0_VIN" />

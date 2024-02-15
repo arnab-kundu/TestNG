@@ -1,7 +1,9 @@
 package com.arnab.testng.tests;
 
 import com.arnab.testng.pages.CarScorePage;
+import com.arnab.testng.pages.CarScorePageQA;
 import com.arnab.testng.pages.Spin360Page;
+import com.arnab.testng.pages.Spin360PageQA;
 
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,15 +16,15 @@ import io.appium.java_client.touch.offset.PointOption;
 /** @noinspection DefaultAnnotationParam, rawtypes */
 public class CreateCS360ReportTest extends TestBase {
 
-    private CarScorePage carScorePage;
-    private Spin360Page spin360Page;
+    private CarScorePageQA carScorePage;
+    private Spin360PageQA spin360Page;
 
     @BeforeTest
     @Override
     public void setUpPage() {
         System.out.println("Inside CreateCS360ReportTest Class...");
-        carScorePage = new CarScorePage(driver);
-        spin360Page = new Spin360Page(driver);
+        carScorePage = new CarScorePageQA(driver);
+        spin360Page = new Spin360PageQA(driver);
     }
 
     @Test(priority = 0)
@@ -63,6 +65,8 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.doneButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialog360Button));
         carScorePage.alertDialog360Button.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueButton));
+        carScorePage.continueButton.click();
     }
 
     @Test(priority = 0)
@@ -73,6 +77,15 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.workingVehicle.click();
         carScorePage.moreOptions.click();
         carScorePage.continueInspection.click();
+    }
+
+    @Test(priority = 1)
+    private void permissionSpin360App() {
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionAllowButton));
+        spin360Page.permissionAllowButton.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionWhileUsingTheAppButton));
+        spin360Page.permissionWhileUsingTheAppButton.click();
     }
 
     @Test(priority = 1)
