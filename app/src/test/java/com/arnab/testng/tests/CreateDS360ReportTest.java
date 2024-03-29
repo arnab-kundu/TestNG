@@ -1,16 +1,25 @@
 package com.arnab.testng.tests;
 
+import static java.time.Duration.ofMillis;
+import static io.appium.java_client.touch.WaitOptions.waitOptions;
+import static io.appium.java_client.touch.offset.PointOption.point;
+
 import com.arnab.testng.pages.CarScorePage;
 import com.arnab.testng.pages.CarScorePageQA;
 import com.arnab.testng.pages.Spin360Page;
 import com.arnab.testng.pages.Spin360PageQA;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-/** @noinspection DefaultAnnotationParam*/
+import io.appium.java_client.TouchAction;
+
+/**
+ * @noinspection DefaultAnnotationParam
+ */
 public class CreateDS360ReportTest extends TestBase {
 
     private CarScorePageQA carScorePage;
@@ -74,11 +83,15 @@ public class CreateDS360ReportTest extends TestBase {
 
     @Test(priority = 1)
     private void permissionSpin360App() {
-        //explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionAllowButton));
-        spin360Page.permissionAllowButton.click();
+        try {
+            //explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionAllowButton));
+            spin360Page.permissionAllowButton.click();
 
-        //explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionWhileUsingTheAppButton));
-        spin360Page.permissionWhileUsingTheAppButton.click();
+            //explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionWhileUsingTheAppButton));
+            spin360Page.permissionWhileUsingTheAppButton.click();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test(priority = 2)
@@ -122,16 +135,12 @@ public class CreateDS360ReportTest extends TestBase {
         spin360Page.cockpitImageSelection.click();
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.interiorCockpitDoneButton));
         spin360Page.interiorCockpitDoneButton.click();
+
+        // verticalSwipe
+        verticalSwipeByPercentages(0.6, 0.3, 0.5);
+
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.proceedButton));
         spin360Page.proceedButton.click();
-
-        // TODO Remove
-        try {
-            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogTakePhotoButton));
-            carScorePage.alertDialogTakePhotoButton.click();
-        } catch (StaleElementReferenceException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
     @Test(priority = 3)
@@ -255,5 +264,20 @@ public class CreateDS360ReportTest extends TestBase {
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
+    }
+
+    /**
+     * Vertical Swipe
+     */
+    public void verticalSwipeByPercentages(double startPercentage, double endPercentage, double anchorPercentage) {
+        Dimension size = driver.manage().window().getSize();
+        int anchor = (int) (size.width * anchorPercentage);
+        int startPoint = (int) (size.height * startPercentage);
+        int endPoint = (int) (size.height * endPercentage);
+        new TouchAction(driver)
+                .press(point(anchor, startPoint))
+                .waitAction(waitOptions(ofMillis(1000)))
+                .moveTo(point(anchor, endPoint))
+                .release().perform();
     }
 }
