@@ -48,7 +48,7 @@ public class CreateAuctionPartnerReportTest extends TestBase {
     @Test(priority = 0)
     private void openDealershipTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealershipsToolbarTitle));
-        carScorePage.dealerName.click();
+        carScorePage.dealerNameAtHomeCarOffer.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.addVehicleButton));
     }
 

@@ -74,10 +74,10 @@ public class CreateDS360ReportTest extends TestBase {
 
     @Test(priority = 1)
     private void permissionSpin360App() {
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionAllowButton));
+        //explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionAllowButton));
         spin360Page.permissionAllowButton.click();
 
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionWhileUsingTheAppButton));
+        //explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionWhileUsingTheAppButton));
         spin360Page.permissionWhileUsingTheAppButton.click();
     }
 
@@ -113,6 +113,9 @@ public class CreateDS360ReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureInterior));
         spin360Page.captureInterior.click();
 
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.selectFromGalleryButton));
+        spin360Page.selectFromGalleryButton.click();
+
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.interiorCockpitButton));
         spin360Page.interiorCockpitButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.cockpitImageSelection));
@@ -123,8 +126,12 @@ public class CreateDS360ReportTest extends TestBase {
         spin360Page.proceedButton.click();
 
         // TODO Remove
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogTakePhotoButton));
-        carScorePage.alertDialogTakePhotoButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialogTakePhotoButton));
+            carScorePage.alertDialogTakePhotoButton.click();
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test(priority = 3)

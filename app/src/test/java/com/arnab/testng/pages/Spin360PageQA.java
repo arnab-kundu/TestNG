@@ -11,25 +11,28 @@ public class Spin360PageQA extends PageBase {
     }
 
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/llCaptureExteriorLayout")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/llCaptureExteriorLayout")
     public MobileElement captureExterior;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/llCaptureInteriorLayout")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/llCaptureInteriorLayout")
     public MobileElement captureInterior;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/tvLogout1")
+    @AndroidFindBy(id = "android:id/button2")
+    public MobileElement selectFromGalleryButton;
+
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/tvLogout1")
     public MobileElement exit;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/capture_Video")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/capture_Video")
     public MobileElement captureVideo;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/textViewStopWatch")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/textViewStopWatch")
     public MobileElement timer;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/ImgeArrowRightIcon")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/proceed")
     public MobileElement reviewFramesNextButton;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/ImgeArrowRightMappingIcon")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/ImgeArrowRightMappingIcon")
     public MobileElement mapExteriorFramesNextButton;
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.ScrollView/androidx.appcompat.widget.LinearLayoutCompat/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.ImageView")
@@ -50,16 +53,16 @@ public class Spin360PageQA extends PageBase {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.ScrollView/androidx.appcompat.widget.LinearLayoutCompat/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[6]/android.widget.FrameLayout/android.widget.ImageView")
     public MobileElement exteriorImage6;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/llCockpitLayout")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/llCockpitLayout")
     public MobileElement interiorCockpitButton;
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.LinearLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.ImageView")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/imageviewAdapterFrame")
     public MobileElement cockpitImageSelection;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/ReviewInteriorEllipseRightArrowFrameLayout")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/ReviewInteriorEllipseRightArrowFrameLayout")
     public MobileElement interiorCockpitDoneButton;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.debug:id/itemPROCEED")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/itemPROCEED")
     public MobileElement proceedButton;
 
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_button")
