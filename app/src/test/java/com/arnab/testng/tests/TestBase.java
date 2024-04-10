@@ -97,7 +97,7 @@ public abstract class TestBase {
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, config.getProperty("PLATFORM_NAME"));
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, config.getProperty("PLATFORM_VERSION"));
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, config.getProperty("DEVICE_NAME"));
-		capabilities.setCapability(MobileCapabilityType.UDID, config.getProperty("UDID"));
+		//capabilities.setCapability(MobileCapabilityType.UDID, config.getProperty("UDID"));
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, config.getProperty("NEW_COMMAND_TIMEOUT"));
 
 		// Set the below dependencies, if we don't want to clear app data and cache
