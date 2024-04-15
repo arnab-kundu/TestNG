@@ -104,14 +104,19 @@ public class CreateDS360ReportTest extends TestBase {
 
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureVideo));
         spin360Page.captureVideo.click();
+        try {
+            Thread.sleep(5 * 1000L);
+        } catch (Exception e) {
 
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.timer));
-        explicitWait.until(ExpectedConditions.textToBePresentInElement(spin360Page.timer, "00:05"));
-        spin360Page.captureVideo.click();
+        }
+        //explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.timer));
+        //explicitWait.until(ExpectedConditions.textToBePresentInElement(spin360Page.timer, "00:05"));
+        spin360Page.stopVideoCapture.click();
 
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.reviewFramesNextButton));
         spin360Page.reviewFramesNextButton.click();
 
+        /*
         verticalSwipeByPercentages(0.6, 0.3, 0.5);
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.exteriorImage1));
         spin360Page.exteriorImage1.click();
@@ -132,6 +137,16 @@ public class CreateDS360ReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.exteriorImage6));
         spin360Page.exteriorImage6.click();
         spin360Page.mapExteriorFramesNextButton.click();
+        */
+
+        // OR
+
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
 
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureInterior));
         spin360Page.captureInterior.click();

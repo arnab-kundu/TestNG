@@ -18,3 +18,4 @@ app/src/test/resources/properties/testdata.properties
 *.apk
 /.idea/migrations.xml
 /app/src/test/resources/properties/testdata.properties
+/.idea/deploymentTargetDropDown.xml

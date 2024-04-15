@@ -23,8 +23,14 @@ public class Spin360PageQA extends PageBase {
     @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/tvLogout1")
     public MobileElement exit;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/capture_Video")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/start_capturing")
     public MobileElement captureVideo;
+
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/stop_capturing")
+    public MobileElement stopVideoCapture;
+
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/accept")
+    public MobileElement acceptButton;
 
     @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/textViewStopWatch")
     public MobileElement timer;
