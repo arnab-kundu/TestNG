@@ -54,7 +54,7 @@ public class CreateDS360ReportTest extends TestBase {
     @Test(priority = 0)
     private void openDealershipTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealershipsToolbarTitle));
-        carScorePage.dealerNameACME_SuperCars.click();
+        carScorePage.dealerNameAudiDominion.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.addVehicleButton));
     }
 

@@ -1,6 +1,6 @@
 package com.arnab.testng.tests;
 
-import com.arnab.testng.pages.CarScorePage;
+import com.arnab.testng.pages.CarScorePageQA;
 
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,13 +10,13 @@ import org.testng.annotations.Test;
 /** @noinspection DefaultAnnotationParam */
 public class CreateCSReportTest extends TestBase {
 
-    private CarScorePage carScorePage;
+    private CarScorePageQA carScorePage;
 
     @BeforeTest
     @Override
     public void setUpPage() {
         System.out.println("Inside CreateCSReportTest Class...");
-        carScorePage = new CarScorePage(driver);
+        carScorePage = new CarScorePageQA(driver);
     }
 
     @Test(priority = 0)

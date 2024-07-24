@@ -24,7 +24,7 @@ Maybe newer version also can be used.
 
 ## How to run
 
-1. Open TestNG project in Android Studio
+1. Open TestNG project in `Android Studio Hedgehog | 2023.1.1`
 2. Run your emulator or connect a physical Android device
 3. Run Appium server
 4. In Android Studio project find `testng.xml` in `resource/properties/testng.xml`
