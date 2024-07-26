@@ -14,18 +14,21 @@
                     <!--<include name="openDraft" />-->
                     <!-- OR -->
                     <include name="createReportTest" />
-                    <include name="permissionSpin360App" />
-                    <include name="spin360Steps" />
-
                     <include name="VIN" />
                     <include name="keysSafeVisibilityCheckTest" />
                     <include name="KEYS" />
+                    <include name="spin360ExteriorFlowTest" />
+                    <include name="waitForVideoRecordingTest" />
+                    <include name="spin360ExteriorFlowTest2" />
+
                     <include name="trunkSafeVisibilityCheckTest" />
                     <include name="INTERIOR_TRUNK_3RD_ROW" />
                     <include name="roofSafeVisibilityCheckTest" />
                     <include name="ROOF" />
                     <include name="interiorRearSafeVisibilityCheckTest" />
                     <include name="INTERIOR_REAR" />
+                    <include name="spin360InteriorFlowTest" />
+                    <include name="spin360InteriorFlowTest2" />
                     <include name="instrumentPanelSafeVisibilityCheckTest" />
                     <include name="instrumentPanel" />
 

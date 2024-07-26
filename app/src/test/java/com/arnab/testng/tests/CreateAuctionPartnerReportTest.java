@@ -1,8 +1,12 @@
 package com.arnab.testng.tests;
 
-import com.arnab.testng.pages.CarScorePage;
+import static java.time.Duration.ofMillis;
+import static io.appium.java_client.touch.WaitOptions.waitOptions;
+import static io.appium.java_client.touch.offset.PointOption.point;
+
 import com.arnab.testng.pages.CarScorePageQA;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -908,8 +912,14 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
     }
-
     @Test(priority = 81)
+    private void step81() {
+        // Step 80
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+        carScorePage.selectionOptionExcellent.click();
+    }
+
+    @Test(priority = 82)
     private void saveAndClose() {
         // Save and Close
         carScorePage.skipButton.click();
@@ -920,5 +930,16 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         carScorePage.workingTab.click();
     }
 
+    public void verticalSwipeByPercentages(double startPercentage, double endPercentage, double anchorPercentage) {
+        Dimension size = driver.manage().window().getSize();
+        int anchor = (int) (size.width * anchorPercentage);
+        int startPoint = (int) (size.height * startPercentage);
+        int endPoint = (int) (size.height * endPercentage);
+        new TouchAction(driver)
+                .press(point(anchor, startPoint))
+                .waitAction(waitOptions(ofMillis(1000)))
+                .moveTo(point(anchor, endPoint))
+                .release().perform();
+    }
 
 }

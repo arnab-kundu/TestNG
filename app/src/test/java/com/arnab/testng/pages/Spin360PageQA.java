@@ -76,4 +76,11 @@ public class Spin360PageQA extends PageBase {
 
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
     public MobileElement permissionWhileUsingTheAppButton;
+
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/exterior_type_spinner")
+    public MobileElement turntableWalkAroundSpinner;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.view.ViewGroup[2]")
+    public MobileElement turntableOptionItem;
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/select_from_gallery_button")
+    public MobileElement selectInteriorFromGalleryButton;
 }
