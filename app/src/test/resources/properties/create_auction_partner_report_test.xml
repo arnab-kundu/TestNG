@@ -10,6 +10,7 @@
                     <!--<include name="appLoginTest" />-->
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
+                    <include name="cameraPermissionTest" />
 
                     <!--<include name="openDraft" />-->
                     <!-- OR -->
@@ -107,7 +108,10 @@
                     <include name="step78" />
                     <include name="step79" />
                     <include name="step80" />
+
                     <include name="step81" />
+                    <include name="step82" />
+                    <include name="step83" />
 
                     <include name="saveAndClose" />
 

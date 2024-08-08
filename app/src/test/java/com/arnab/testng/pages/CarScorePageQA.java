@@ -152,7 +152,8 @@ public class CarScorePageQA extends PageBase {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[6]")
     public MobileElement spinnerYearItem2021;
 
-
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+    public MobileElement cameraPermissionButton;
 
 
 

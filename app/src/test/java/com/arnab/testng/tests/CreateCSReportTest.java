@@ -657,20 +657,26 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test(priority = 57)
     private void step57() {
         // Step 57 - MILEAGE
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.mileage));
-        carScorePage.mileage.sendKeys("6");
-        carScorePage.acceptPhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
         carScorePage.placeHotspotPhoto.click();
+        carScorePage.acceptPhotoButton.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.mileage));
+        carScorePage.mileage.sendKeys("6");
         carScorePage.acceptPhotoButton.click();
     }
 

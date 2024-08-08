@@ -52,13 +52,23 @@ public class CreateAuctionPartnerReportTest extends TestBase {
     @Test(priority = 0)
     private void openDealershipTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealershipsToolbarTitle));
-        carScorePage.dealerNameAtHomeCarOffer.click();
+        carScorePage.dealerName.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.addVehicleButton));
     }
 
     @Test(priority = 1)
-    private void createReportTest() {
+    private void cameraPermissionTest() {
         carScorePage.addVehicleButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPermissionButton));
+            carScorePage.cameraPermissionButton.click();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test(priority = 1)
+    private void createReportTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.skipScanButton));
         carScorePage.skipScanButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.vehicleVinEditText));
@@ -875,20 +885,26 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (StaleElementReferenceException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test(priority = 77)
     private void step77() {
         // Step 77 Mileage
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.mileage));
-        carScorePage.mileage.sendKeys("6");
-        carScorePage.acceptPhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
         carScorePage.placeHotspotPhoto.click();
+        carScorePage.acceptPhotoButton.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.mileage));
+        carScorePage.mileage.sendKeys("6");
         carScorePage.acceptPhotoButton.click();
     }
 
@@ -912,14 +928,29 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
     }
+
     @Test(priority = 81)
     private void step81() {
-        // Step 80
+        // Step 81
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
     }
 
     @Test(priority = 82)
+    private void step82() {
+        // Step 82
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+        carScorePage.selectionOptionExcellent.click();
+    }
+
+    @Test(priority = 83)
+    private void step83() {
+        // Step 83
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+        carScorePage.selectionOptionExcellent.click();
+    }
+
+    @Test(priority = 84)
     private void saveAndClose() {
         // Save and Close
         carScorePage.skipButton.click();
