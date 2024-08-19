@@ -316,14 +316,6 @@ public class CreateCSReportTest extends TestBase {
         }
     }
 
-    @Test(priority = 17)
-    private void step17_2() {
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
-    }
-
     @Test(priority = 18)
     private void step18() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
