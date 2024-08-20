@@ -155,6 +155,9 @@ public class CarScorePageQA extends PageBase {
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
     public MobileElement cameraPermissionButton;
 
+    @AndroidFindBy(id = "com.dds.carscore.qa:id/progressbar")
+    public MobileElement loader;
+
 
 
 

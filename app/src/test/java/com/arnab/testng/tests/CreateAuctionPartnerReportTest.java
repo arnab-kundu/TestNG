@@ -77,8 +77,8 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         // carScorePage.alertDialogYesButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.doneButton));
         carScorePage.doneButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueButton));
-        carScorePage.continueButton.click();
+        // explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueButton));
+        // carScorePage.continueButton.click();
     }
 
     @Test(priority = 0)

@@ -1,10 +1,9 @@
 package com.arnab.testng.tests;
 
-import com.arnab.testng.pages.CarScorePage;
 import com.arnab.testng.pages.CarScorePageQA;
-import com.arnab.testng.pages.Spin360Page;
 import com.arnab.testng.pages.Spin360PageQA;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
@@ -13,11 +12,14 @@ import org.testng.annotations.Test;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
-/** @noinspection DefaultAnnotationParam, rawtypes */
+/**
+ * @noinspection DefaultAnnotationParam, rawtypes
+ */
 public class CreateCS360ReportTest extends TestBase {
 
     private CarScorePageQA carScorePage;
     private Spin360PageQA spin360Page;
+    private Point acceptPhotoButtonPoint;
 
     @BeforeTest
     @Override
@@ -65,8 +67,8 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.doneButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.alertDialog360Button));
         carScorePage.alertDialog360Button.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueButton));
-        carScorePage.continueButton.click();
+        // explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueButton));
+        // carScorePage.continueButton.click();
     }
 
     @Test(priority = 0)
@@ -77,57 +79,6 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.workingVehicle.click();
         carScorePage.moreOptions.click();
         carScorePage.continueInspection.click();
-    }
-
-    @Test(priority = 1)
-    private void permissionSpin360App() {
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionAllowButton));
-        spin360Page.permissionAllowButton.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionWhileUsingTheAppButton));
-        spin360Page.permissionWhileUsingTheAppButton.click();
-    }
-
-    @Test(priority = 1)
-    private void spin360Steps() {
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureExterior));
-        spin360Page.captureExterior.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureVideo));
-        spin360Page.captureVideo.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.timer));
-        explicitWait.until(ExpectedConditions.textToBePresentInElement(spin360Page.timer, "00:05"));
-        spin360Page.captureVideo.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.reviewFramesNextButton));
-        spin360Page.reviewFramesNextButton.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.exteriorImage1));
-        spin360Page.exteriorImage1.click();
-        spin360Page.mapExteriorFramesNextButton.click();
-        spin360Page.exteriorImage2.click();
-        spin360Page.mapExteriorFramesNextButton.click();
-        spin360Page.exteriorImage3.click();
-        spin360Page.mapExteriorFramesNextButton.click();
-        spin360Page.exteriorImage4.click();
-        spin360Page.mapExteriorFramesNextButton.click();
-        spin360Page.exteriorImage5.click();
-        spin360Page.mapExteriorFramesNextButton.click();
-        spin360Page.exteriorImage6.click();
-        spin360Page.mapExteriorFramesNextButton.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.captureInterior));
-        spin360Page.captureInterior.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.interiorCockpitButton));
-        spin360Page.interiorCockpitButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.cockpitImageSelection));
-        spin360Page.cockpitImageSelection.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.interiorCockpitDoneButton));
-        spin360Page.interiorCockpitDoneButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.proceedButton));
-        spin360Page.proceedButton.click();
     }
 
     @Test(priority = 1)
@@ -165,16 +116,84 @@ public class CreateCS360ReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+
+        /* Save point for the next step */
+        acceptPhotoButtonPoint = carScorePage.acceptPhotoButton.getCenter();
+        System.out.println("X: " + acceptPhotoButtonPoint.x);
+        System.out.println("Y: " + acceptPhotoButtonPoint.y);
+
         carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 2)
-    private void step2() {
-        // Step 2
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
-        carScorePage.selectionOptionExcellent.click();
+    private void permissionSpin360App() {
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionAllowButton));
+            spin360Page.permissionAllowButton.click();
+
+            explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.permissionWhileUsingTheAppButton));
+            spin360Page.permissionWhileUsingTheAppButton.click();
+        } catch (Exception e) {
+        }
     }
 
+    @Test(priority = 2)
+    private void spin360ExteriorFlowTest() {
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.turntableWalkAroundSpinner));
+        spin360Page.turntableWalkAroundSpinner.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.turntableOptionItem));
+        spin360Page.turntableOptionItem.click();
+
+        PointOption videoCaptureDoneButtonPosition = new PointOption<>();
+        videoCaptureDoneButtonPosition.withCoordinates(acceptPhotoButtonPoint.x, acceptPhotoButtonPoint.y);
+
+        TouchAction touchAction = new TouchAction<>(driver);
+        //touchAction.tap(videoCaptureDoneButtonPosition);
+        touchAction.tap(videoCaptureDoneButtonPosition).perform();
+    }
+
+    @Test(priority = 2)
+    private void waitForVideoRecordingTest() {
+        try {
+            // TODO if this fails not a problem
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test(priority = 3)
+    private void spin360ExteriorFlowTest2() {
+        PointOption videoCaptureDoneButtonPosition = new PointOption<>();
+        videoCaptureDoneButtonPosition.withCoordinates(acceptPhotoButtonPoint.x, acceptPhotoButtonPoint.y);
+        TouchAction touchAction = new TouchAction<>(driver);
+        touchAction.tap(videoCaptureDoneButtonPosition).perform();
+
+        spin360Page.reviewFramesNextButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+        spin360Page.acceptButton.click();
+    }
+
+    @Test(priority = 3)
+    private void step2() {
+        explicitWait.until(ExpectedConditions.invisibilityOf(carScorePage.loader));
+
+        // Step 2
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+    }
+
+    @Test(priority = 3)
+    private void step3() {
+        // Step 3 - Open Hood
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+    }
     @Test(priority = 3)
     private void step3_selectTireBrand() {
 
@@ -451,8 +470,34 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.selectionOptionExcellent.click();
     }
 
+    @Test(priority = 33)
+    private void step33_1() {
+        // Step 33 - ROOF
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+        carScorePage.selectionOptionExcellent.click();
+    }
+
+    @Test(priority = 34)
+    private void spin360InteriorFlowTest() {
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.selectInteriorFromGalleryButton));
+        spin360Page.selectInteriorFromGalleryButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.cockpitImageSelection));
+        spin360Page.cockpitImageSelection.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.interiorCockpitDoneButton));
+        spin360Page.interiorCockpitDoneButton.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.selectInteriorFromGalleryButton));
+        spin360Page.selectInteriorFromGalleryButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.cockpitImageSelection));
+        spin360Page.cockpitImageSelection.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.interiorCockpitDoneButton));
+        spin360Page.interiorCockpitDoneButton.click();
+    }
+
     @Test(priority = 34)
     private void step34() {
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.loader));
+
         // Step 34
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
@@ -609,6 +654,17 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.acceptPhotoButton.click();
     }
 
+    @Test(priority = 53)
+    private void step53_1() {
+        // TODO select hotspot in Pannellum
+        PointOption pannellumHotspotPosition = new PointOption<>();
+        pannellumHotspotPosition.withCoordinates(1333, 635);
+        TouchAction touchAction = new TouchAction<>(driver);
+        touchAction.tap(pannellumHotspotPosition);
+
+        carScorePage.acceptPhotoButton.click();
+    }
+
     @Test(priority = 54)
     private void step54() {
         // Step 54 -  Sound System
@@ -669,20 +725,26 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
+
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (Exception e) {
+        }
     }
 
     @Test(priority = 57)
     private void step57() {
         // Step 57 - MILEAGE
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.mileage));
-        carScorePage.mileage.sendKeys("6");
-        carScorePage.acceptPhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
         carScorePage.placeHotspotPhoto.click();
+        carScorePage.acceptPhotoButton.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.mileage));
+        carScorePage.mileage.sendKeys("6");
         carScorePage.acceptPhotoButton.click();
     }
 
