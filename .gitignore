@@ -19,3 +19,4 @@ app/src/test/resources/properties/testdata.properties
 /.idea/migrations.xml
 /app/src/test/resources/properties/testdata.properties
 /.idea/deploymentTargetDropDown.xml
+TestResult**.html
