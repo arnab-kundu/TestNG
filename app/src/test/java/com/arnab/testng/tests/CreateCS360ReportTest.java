@@ -204,9 +204,9 @@ public class CreateCS360ReportTest extends TestBase {
         carScorePage.tireBrand.click();
 
         carScorePage.tireSizes.click();
-        carScorePage.tireSize.click();
-        carScorePage.tireSize.click();
-        carScorePage.tireSize.click();
+        carScorePage.tireWidth1.click();
+        carScorePage.tireWidth2.click();
+        carScorePage.tireWidth3.click();
         carScorePage.acceptPhotoButton.click();
 
         carScorePage.tireDepthSpinner.click();
