@@ -7,7 +7,7 @@
             <class name="com.arnab.testng.tests.CreateAuctionPartnerReportTest">
                 <methods>
                     <include name="appLaunchSuccessfulTest" />
-                    <!--<include name="appLoginTest" />-->
+                    <include name="appLoginTest" />
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
                     <include name="cameraPermissionTest" />
@@ -31,7 +31,6 @@
                     <include name="step11_Ok" />
                     <include name="step12" />
                     <include name="driverTest" />
-                    <include name="driverTest2" />
                     <include name="selectTireBrand_Step13" />
                     <include name="step14" />
                     <include name="step15" />

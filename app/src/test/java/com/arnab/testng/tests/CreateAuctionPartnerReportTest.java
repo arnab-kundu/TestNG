@@ -33,15 +33,23 @@ public class CreateAuctionPartnerReportTest extends TestBase {
 
     @Test(priority = 0)
     private void appLaunchSuccessfulTest() {
-
+        try {
+            carScorePage.notificationPermissionAllowButton.click();
+        } catch (Exception e) {
+            System.out.println("Permission already granted");
+        }
     }
 
     @Test(priority = 0)
     private void appLoginTest() {
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.username));
-        carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
-        carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
-        carScorePage.loginButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.username));
+            carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
+            carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
+            carScorePage.loginButton.click();
+        } catch (Exception e) {
+            System.out.println("Already logged in");
+        }
     }
 
     @Test(priority = 0)
@@ -60,10 +68,9 @@ public class CreateAuctionPartnerReportTest extends TestBase {
     private void cameraPermissionTest() {
         carScorePage.addVehicleButton.click();
         try {
-            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPermissionButton));
             carScorePage.cameraPermissionButton.click();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Permission already granted");
         }
     }
 
@@ -123,6 +130,12 @@ public class CreateAuctionPartnerReportTest extends TestBase {
     @Test(priority = 3)
     private void step3() {
         // Test Drive
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+            carScorePage.acceptPhotoButton.click();
+        } catch (Exception e) {
+            System.out.println("Enabled do not show again");
+        }
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionYes));
         carScorePage.selectionOptionYes.click();
     }
@@ -228,6 +241,12 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         carScorePage.videoCheckBox4.click();
         carScorePage.acceptPhotoButton.click();
 
+        try {
+            carScorePage.recordAudioPermissionButton.click();
+        } catch (Exception e) {
+            System.out.println("Permission already granted");
+        }
+
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.recordVideoButton));
         carScorePage.recordVideoButton.click();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -252,16 +271,9 @@ public class CreateAuctionPartnerReportTest extends TestBase {
     @Test(priority = 12)
     private void driverTest() {
         // DRIVER FRONT ANGLE
-        fluentWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-    }
-
-    @Test(priority = 12)
-    private void driverTest2() {
-        // DRIVER
-        fluentWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.takePhotoButton));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
@@ -360,10 +372,10 @@ public class CreateAuctionPartnerReportTest extends TestBase {
 
     @Test(priority = 22)
     private void step22() {
-        carScorePage.paintOption.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        carScorePage.selectionOptionExcellent.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.takePhotoButton));
         carScorePage.takePhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
     }
 
@@ -523,10 +535,14 @@ public class CreateAuctionPartnerReportTest extends TestBase {
 
     @Test(priority = 34)
     private void step34_1() {
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-        carScorePage.acceptPhotoButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+            carScorePage.takePhotoButton.click();
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+            carScorePage.acceptPhotoButton.click();
+        } catch (Exception e) {
+            System.out.println("Already competed in Step 34");
+        }
     }
 
     @Test(priority = 35)
@@ -593,7 +609,7 @@ public class CreateAuctionPartnerReportTest extends TestBase {
 
     @Test(priority = 43)
     private void step43() {
-        // Step 43 TODO
+        // Step 43
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
@@ -658,9 +674,6 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         // Step 49
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
-        carScorePage.placeHotspotPhoto.click();
-        carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 50)
