@@ -112,7 +112,8 @@
                     <include name="step82" />
                     <include name="step83" />
 
-                    <include name="saveAndClose" />
+                    <!--<include name="saveAndClose" />-->
+                    <include name="finishAndSubmit" />
 
                 </methods>
             </class>

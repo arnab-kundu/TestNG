@@ -1,11 +1,18 @@
 package com.arnab.testng.tests;
 
+import static java.time.Duration.ofMillis;
+import static io.appium.java_client.touch.WaitOptions.waitOptions;
+import static io.appium.java_client.touch.offset.PointOption.point;
+
 import com.arnab.testng.pages.CarScorePageQA;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import io.appium.java_client.TouchAction;
 
 /** @noinspection DefaultAnnotationParam */
 public class CreateCSReportTest extends TestBase {
@@ -21,15 +28,22 @@ public class CreateCSReportTest extends TestBase {
 
     @Test(priority = 0)
     private void appLaunchSuccessfulTest() {
-
+        try {
+            carScorePage.notificationPermissionAllowButton.click();
+        } catch (Exception e) {
+            System.out.println("Permission already granted");
+        }
     }
 
     @Test(priority = 0)
     private void appLoginTest() {
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.username));
-        carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
-        carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
-        carScorePage.loginButton.click();
+        try {
+            carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
+            carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
+            carScorePage.loginButton.click();
+        } catch (Exception e) {
+            System.out.println("Already logged in");
+        }
     }
 
     @Test(priority = 0)
@@ -43,6 +57,17 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.dealerNameAppleAuraHonda.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.addVehicleButton));
     }
+
+    @Test(priority = 1)
+    private void cameraPermissionTest() {
+        carScorePage.addVehicleButton.click();
+        try {
+            carScorePage.cameraPermissionButton.click();
+        } catch (Exception e) {
+            System.out.println("Permission already granted");
+        }
+    }
+
 
     @Test(priority = 1)
     private void createReportTest() {
@@ -696,5 +721,27 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.workingTab.click();
     }
 
+    @Test(priority = 60)
+    private void finishAndSubmit() {
+        // Finish and Submit
+        verticalSwipeByPercentages(0.6, 0.3, 0.5);
+        carScorePage.finishReportButton.click();
+        carScorePage.submitReportButton.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+    }
+
+    public void verticalSwipeByPercentages(double startPercentage, double endPercentage, double anchorPercentage) {
+        Dimension size = driver.manage().window().getSize();
+        int anchor = (int) (size.width * anchorPercentage);
+        int startPoint = (int) (size.height * startPercentage);
+        int endPoint = (int) (size.height * endPercentage);
+        new TouchAction(driver)
+                .press(point(anchor, startPoint))
+                .waitAction(waitOptions(ofMillis(1000)))
+                .moveTo(point(anchor, endPoint))
+                .release().perform();
+    }
 
 }

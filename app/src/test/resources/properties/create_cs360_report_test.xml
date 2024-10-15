@@ -7,9 +7,10 @@
             <class name="com.arnab.testng.tests.CreateCS360ReportTest">
                 <methods>
                     <include name="appLaunchSuccessfulTest" />
-                    <!--<include name="appLoginTest" />-->
+                    <include name="appLoginTest" />
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
+                    <include name="cameraPermissionTest" />
 
                     <!--<include name="openDraft" />-->
                     <!-- OR -->
@@ -92,7 +93,9 @@
                     <include name="step57" />
                     <include name="step58" />
                     <include name="step59" />
-                    <include name="saveAndClose" />
+
+                    <!--<include name="saveAndClose" />-->
+                    <include name="finishAndSubmit" />
 
                 </methods>
             </class>

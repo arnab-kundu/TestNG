@@ -270,10 +270,13 @@ public class CreateAuctionPartnerReportTest extends TestBase {
 
     @Test(priority = 12)
     private void driverTest() {
-        // DRIVER FRONT ANGLE
+        // DRIVER
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.takePhotoButton));
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.takePhotoButton));
+        } catch (Exception e) {
+        }
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
@@ -282,7 +285,7 @@ public class CreateAuctionPartnerReportTest extends TestBase {
     @Test(priority = 12)
     private void step12() {
 
-        // Step 12
+        // Step 12 - DRIVER FRONT ANGLE
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
     }
@@ -969,6 +972,18 @@ public class CreateAuctionPartnerReportTest extends TestBase {
         carScorePage.skipButton.click();
         carScorePage.closeButton.click();
         carScorePage.alertDialogSaveButton.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+    }
+
+    @Test(priority = 84)
+    private void finishAndSubmit() {
+        // Finish and Submit
+        carScorePage.skipButton.click();
+        verticalSwipeByPercentages(0.6, 0.3, 0.5);
+        carScorePage.finishReportButton.click();
+        carScorePage.submitReportButton.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();

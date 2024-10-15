@@ -170,7 +170,11 @@ public class CarScorePageQA extends PageBase {
     @AndroidFindBy(id = "com.dds.carscore.qa:id/progressbar")
     public MobileElement loader;
 
+    @AndroidFindBy(id = "com.dds.carscore.qa:id/finish_report")
+    public MobileElement finishReportButton;
 
+    @AndroidFindBy(id = "com.dds.carscore.qa:id/submit_report")
+    public MobileElement submitReportButton;
 
 
 
