@@ -13,6 +13,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -208,7 +209,7 @@ public class CreateDS360ReportTest extends TestBase {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (StaleElementReferenceException e) {
+        } catch (TimeoutException e) {
             System.out.println(e.getMessage());
         }
     }

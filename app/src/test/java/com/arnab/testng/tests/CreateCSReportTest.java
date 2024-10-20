@@ -71,7 +71,6 @@ public class CreateCSReportTest extends TestBase {
 
     @Test(priority = 1)
     private void createReportTest() {
-        carScorePage.addVehicleButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.skipScanButton));
         carScorePage.skipScanButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.vehicleVinEditText));
@@ -101,7 +100,7 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        // TODO if this fails not a problem
+        // if this fails not a problem
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
@@ -130,7 +129,7 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        // TODO - if this fails not a problem
+        // if this fails not a problem
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
@@ -145,7 +144,7 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        // TODO - if this fails not a problem
+        // if this fails not a problem
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
@@ -263,16 +262,17 @@ public class CreateCSReportTest extends TestBase {
     @Test(priority = 12)
     private void step12() {
         // Step 12
-        carScorePage.paintOption.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        carScorePage.takePhotoButton.click();
-        carScorePage.acceptPhotoButton.click();
+        carScorePage.selectionOptionExcellent.click();
     }
 
     @Test(priority = 13)
     private void step13() {
-        // Step 13
+        // Step 13 - Rear
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        carScorePage.takePhotoButton.click();
+        carScorePage.acceptPhotoButton.click();
+
+        // Rear Window
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
     }
@@ -318,7 +318,7 @@ public class CreateCSReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
 
-        // TODO - if this fails not a problem
+        // if this fails not a problem
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
@@ -333,7 +333,7 @@ public class CreateCSReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
 
-        // TODO - if this fails not a problem
+        // if this fails not a problem
         try {
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (StaleElementReferenceException e) {
@@ -396,7 +396,6 @@ public class CreateCSReportTest extends TestBase {
         carScorePage.selectionOptionExcellent.click();
     }
 
-    //TODO
     @Test(priority = 25)
     private void step25() {
         // Step 25
