@@ -83,4 +83,7 @@ public class Spin360PageQA extends PageBase {
     public MobileElement turntableOptionItem;
     @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/select_from_gallery_button")
     public MobileElement selectInteriorFromGalleryButton;
+
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_all_button")
+    public MobileElement photoPermissionAllowAllButton;
 }

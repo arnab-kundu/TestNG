@@ -31,6 +31,7 @@
                     <include name="spin360InteriorFlowTest2" />
                     <include name="instrumentPanelSafeVisibilityCheckTest" />
                     <include name="instrumentPanel" />
+                    <include name="verifiedVehicleOption" />
 
                     <include name="saveAndClose" />
 

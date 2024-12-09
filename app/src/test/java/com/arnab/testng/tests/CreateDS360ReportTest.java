@@ -31,6 +31,7 @@ public class CreateDS360ReportTest extends TestBase {
     private CarScorePageQA carScorePage;
     private Spin360PageQA spin360Page;
     private Point acceptPhotoButtonPoint;
+
     @BeforeTest
     @Override
     public void setUpPage() {
@@ -55,13 +56,13 @@ public class CreateDS360ReportTest extends TestBase {
     @Test(priority = 0)
     private void dealershipDisplayedTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealershipsToolbarTitle));
-        explicitWait.until(ExpectedConditions.visibilityOf( carScorePage.dealerNameAudiDominion));
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealerNameAudiDominion));
     }
 
     @Test(priority = 0)
     private void openDealershipTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealershipsToolbarTitle));
-        explicitWait.until(ExpectedConditions.visibilityOf( carScorePage.dealerNameAudiDominion));
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealerNameAudiDominion));
         carScorePage.dealerNameAudiDominion.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.addVehicleButton));
         carScorePage.addVehicleButton.click();
@@ -145,6 +146,10 @@ public class CreateDS360ReportTest extends TestBase {
 
     @Test(priority = 4)
     private void spin360ExteriorFlowTest() {
+        try {
+            spin360Page.photoPermissionAllowAllButton.click();
+        }catch (Exception e){
+        }
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.turntableWalkAroundSpinner));
         spin360Page.turntableWalkAroundSpinner.click();
 
@@ -160,7 +165,7 @@ public class CreateDS360ReportTest extends TestBase {
     }
 
     @Test(priority = 5)
-    private void waitForVideoRecordingTest(){
+    private void waitForVideoRecordingTest() {
         try {
             // TODO if this fails not a problem
             explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
@@ -170,7 +175,7 @@ public class CreateDS360ReportTest extends TestBase {
     }
 
     @Test(priority = 6)
-    private void spin360ExteriorFlowTest2(){
+    private void spin360ExteriorFlowTest2() {
         PointOption videoCaptureDoneButtonPosition = new PointOption<>();
         videoCaptureDoneButtonPosition.withCoordinates(acceptPhotoButtonPoint.x, acceptPhotoButtonPoint.y);
         TouchAction touchAction = new TouchAction<>(driver);
@@ -245,7 +250,7 @@ public class CreateDS360ReportTest extends TestBase {
     }
 
     @Test(priority = 11)
-    private void spin360InteriorFlowTest(){
+    private void spin360InteriorFlowTest() {
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.selectInteriorFromGalleryButton));
         spin360Page.selectInteriorFromGalleryButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.cockpitImageSelection));
@@ -271,12 +276,28 @@ public class CreateDS360ReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueVerifiedVehicleOption));
     }
 
     @Test(priority = 14)
+    private void verifiedVehicleOption() {
+        // VERIFIED VEHICLE OPTION
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueVerifiedVehicleOption));
+        carScorePage.continueVerifiedVehicleOption.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
+        carScorePage.acceptPhotoButton.click();
+    }
+
+    @Test(priority = 15)
     private void saveAndClose() {
         // Save and Close
-        carScorePage.skipButton.click();
         carScorePage.closeButton.click();
         carScorePage.alertDialogSaveButton.click();
         carScorePage.workingTab.click();

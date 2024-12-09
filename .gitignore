@@ -20,3 +20,5 @@ app/src/test/resources/properties/testdata.properties
 /app/src/test/resources/properties/testdata.properties
 /.idea/deploymentTargetDropDown.xml
 TestResult**.html
+/.idea/deploymentTargetSelector.xml
+/.idea/runConfigurations.xml
