@@ -47,6 +47,7 @@ public class CreateAuctionPartnerReportTest extends TestBase {
             carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
             carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
             carScorePage.loginButton.click();
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.dealershipsToolbarTitle));
         } catch (Exception e) {
             System.out.println("Already logged in");
         }
