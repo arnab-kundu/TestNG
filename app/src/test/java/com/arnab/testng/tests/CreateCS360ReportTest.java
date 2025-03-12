@@ -139,6 +139,10 @@ public class CreateCS360ReportTest extends TestBase {
 
     @Test(priority = 2)
     private void spin360ExteriorFlowTest() {
+        try {
+            spin360Page.photoPermissionAllowAllButton.click();
+        } catch (Exception e) {
+        }
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.turntableWalkAroundSpinner));
         spin360Page.turntableWalkAroundSpinner.click();
 
