@@ -4,23 +4,15 @@ import static java.time.Duration.ofMillis;
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 
-import android.util.Log;
-
-import com.arnab.testng.pages.CarScorePage;
 import com.arnab.testng.pages.CarScorePageQA;
-import com.arnab.testng.pages.Spin360Page;
 import com.arnab.testng.pages.Spin360PageQA;
 
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
@@ -283,14 +275,14 @@ public class CreateDS360ReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueVerifiedVehicleOption));
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectFeaturesManuallyButton));
     }
 
     @Test(priority = 14)
     private void verifiedVehicleOption() {
         // VERIFIED VEHICLE OPTION
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.continueVerifiedVehicleOption));
-        carScorePage.continueVerifiedVehicleOption.click();
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectFeaturesManuallyButton));
+        carScorePage.selectFeaturesManuallyButton.click();
 
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();

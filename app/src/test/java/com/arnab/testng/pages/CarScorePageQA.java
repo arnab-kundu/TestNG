@@ -120,8 +120,8 @@ public class CarScorePageQA extends PageBase {
     public MobileElement mileage;
     @AndroidFindBy(id = "com.dds.carscore.qa:id/skip")
     public MobileElement skipButton;
-    @AndroidFindBy(id = "com.dds.carscore.qa:id/continue_button")
-    public MobileElement continueVerifiedVehicleOption;
+    @AndroidFindBy(id = "com.dds.carscore.qa:id/select_features_manually_button")
+    public MobileElement selectFeaturesManuallyButton;
     @AndroidFindBy(id = "com.dds.carscore.qa:id/close")
     public MobileElement closeButton;
     @AndroidFindBy(id = "android:id/button1")

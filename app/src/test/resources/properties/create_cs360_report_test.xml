@@ -63,7 +63,7 @@
                     <include name="step32" />
                     <include name="step33" />
                     <include name="step33_1" />
-                    <include name="spin360InteriorFlowTest"/>
+                    <include name="spin360InteriorFlowTest" />
                     <include name="step34" />
                     <include name="step35" />
                     <include name="step36" />
@@ -93,9 +93,10 @@
                     <include name="step57" />
                     <include name="step58" />
                     <include name="step59" />
+                    <include name="verifiedVehicleOption" />
 
-                    <!--<include name="saveAndClose" />-->
-                    <include name="finishAndSubmit" />
+                    <include name="saveAndClose" />
+                    <!--<include name="finishAndSubmit" />-->
 
                 </methods>
             </class>
