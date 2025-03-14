@@ -7,7 +7,7 @@
             <class name="com.arnab.testng.tests.CreateDS360ReportTest">
                 <methods>
                     <include name="appLaunchSuccessfulTest" />
-                    <!--<include name="appLoginTest" />-->
+                    <include name="appLoginTest" />
                     <include name="dealershipDisplayedTest" />
                     <include name="openDealershipTest" />
 

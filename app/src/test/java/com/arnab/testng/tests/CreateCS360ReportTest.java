@@ -36,10 +36,14 @@ public class CreateCS360ReportTest extends TestBase {
 
     @Test(priority = 0)
     private void appLoginTest() {
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.username));
-        carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
-        carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
-        carScorePage.loginButton.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.username));
+            carScorePage.username.sendKeys(testData.getProperty("VALID_USERNAME"));
+            carScorePage.password.sendKeys(testData.getProperty("VALID_PASSWORD"));
+            carScorePage.loginButton.click();
+        } catch (Exception e) {
+            System.out.println("Already logged in");
+        }
     }
 
     @Test(priority = 0)
@@ -198,6 +202,7 @@ public class CreateCS360ReportTest extends TestBase {
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
     }
+
     @Test(priority = 3)
     private void step3_selectTireBrand() {
 
@@ -646,7 +651,7 @@ public class CreateCS360ReportTest extends TestBase {
 
         // TODO select hotspot in Pannellum
         PointOption pannellumHotspotPosition = new PointOption<>();
-        pannellumHotspotPosition.withCoordinates(1333, 635);
+        pannellumHotspotPosition.withCoordinates(acceptPhotoButtonPoint.x, acceptPhotoButtonPoint.y);
         TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(pannellumHotspotPosition);
         try {

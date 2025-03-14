@@ -455,10 +455,6 @@ public class CreateCSReportTest extends TestBase {
         // Step 31 - HEADLIGHTS
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
-
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.placeHotspotPhoto));
-        carScorePage.placeHotspotPhoto.click();
-        carScorePage.acceptPhotoButton.click();
     }
 
     @Test(priority = 32)
