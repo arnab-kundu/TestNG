@@ -11,6 +11,25 @@ To run this project some setup and software needed. Those are listed in prerequi
 - Test apk file
 - Android source code of Test apk file
 
+## Installation of Appium
+Appium GUI `v1.19.1` or the latest `v1.22.3-4` is no longer maintained. Go through the README section of this Github repo [appium-desktop](https://github.com/appium/appium-desktop) for more information.
+
+So here is the alternative option.  
+- https://appium.io/docs/en/latest/quickstart/install/
+- https://appium.io/docs/en/latest/quickstart/uiauto2-driver/
+
+To install the latest Appium using npm installation follow the below steps:
+- Open CMD in Windows or Terminal in Mac
+- run `npm install -g appium`
+- run `appium`
+- run `appium driver install uiautomator2`
+- run `appium setup`
+- run `appium driver doctor uiautomator2`
+```
+[Appium] Available drivers:
+[Appium]   - uiautomator2@2.0.5 (automationName 'UiAutomator2')
+```
+
 ## Setup project
 
 1. Install Android Studio

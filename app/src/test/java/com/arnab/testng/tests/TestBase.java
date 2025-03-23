@@ -108,6 +108,7 @@ public abstract class TestBase {
 		capabilities.setCapability("appPackage", config.getProperty("APP_PACKAGE"));
 		capabilities.setCapability("appActivity", config.getProperty("APP_ACTIVITY"));
 		capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + config.getProperty("APP_PATH"));
+		capabilities.setCapability("automationName", "UiAutomator2");
 
 		driver = new AppiumDriver<MobileElement>(url, capabilities);
 
