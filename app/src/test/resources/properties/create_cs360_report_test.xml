@@ -24,6 +24,7 @@
                     <include name="spin360ExteriorFlowTest" />
                     <include name="waitForVideoRecordingTest" />
                     <include name="spin360ExteriorFlowTest2" />
+                    <include name="spin360ExteriorFlowTest3" />
 
                     <include name="step2" />
                     <include name="step3_selectTireBrand" />
@@ -66,6 +67,7 @@
                     <include name="step34" />
                     <include name="step35" />
                     <include name="step36" />
+                    <include name="step36_1" />
                     <include name="step37" />
                     <include name="step38" />
                     <include name="step39" />

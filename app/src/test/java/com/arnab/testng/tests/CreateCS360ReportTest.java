@@ -181,6 +181,15 @@ public class CreateCS360ReportTest extends TestBase {
         TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(videoCaptureDoneButtonPosition).perform();
 
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.reviewFramesNextButton));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test(priority = 3)
+    private void spin360ExteriorFlowTest3() {
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.reviewFramesNextButton));
         spin360Page.reviewFramesNextButton.click();
         spin360Page.acceptButton.click();
@@ -518,6 +527,13 @@ public class CreateCS360ReportTest extends TestBase {
 
     @Test(priority = 36)
     private void step36() {
+        // Step 36
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+        carScorePage.selectionOptionExcellent.click();
+    }
+
+    @Test(priority = 36)
+    private void step36_1() {
         // Step 36
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
         carScorePage.selectionOptionExcellent.click();
