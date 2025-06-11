@@ -20,13 +20,12 @@
                     <include name="step1_1_Number_of_keys" />
                     <include name="step1_2_OpenHood" />
 
-                    <include name="permissionSpin360App" />
+                    <!--<include name="permissionSpin360App" />-->
                     <include name="spin360ExteriorFlowTest" />
                     <include name="waitForVideoRecordingTest" />
                     <include name="spin360ExteriorFlowTest2" />
 
                     <include name="step2" />
-                    <include name="step3" />
                     <include name="step3_selectTireBrand" />
                     <include name="step4" />
                     <include name="step5" />

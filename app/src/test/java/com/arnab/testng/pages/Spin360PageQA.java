@@ -65,7 +65,7 @@ public class Spin360PageQA extends PageBase {
     @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/imageviewAdapterFrame")
     public MobileElement cockpitImageSelection;
 
-    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/ReviewInteriorEllipseRightArrowFrameLayout")
+    @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/proceed_checkmark")
     public MobileElement interiorCockpitDoneButton;
 
     @AndroidFindBy(id = "com.dealerspecialties.spin360.qa:id/itemPROCEED")

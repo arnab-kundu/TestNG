@@ -167,7 +167,8 @@ public class CreateCS360ReportTest extends TestBase {
     private void waitForVideoRecordingTest() {
         try {
             // TODO if this fails not a problem
-            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+            explicitWait.wait(5000);
+            //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -180,6 +181,7 @@ public class CreateCS360ReportTest extends TestBase {
         TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(videoCaptureDoneButtonPosition).perform();
 
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.reviewFramesNextButton));
         spin360Page.reviewFramesNextButton.click();
         spin360Page.acceptButton.click();
         spin360Page.acceptButton.click();
@@ -187,30 +189,19 @@ public class CreateCS360ReportTest extends TestBase {
         spin360Page.acceptButton.click();
         spin360Page.acceptButton.click();
         spin360Page.acceptButton.click();
+
+        try {
+            explicitWait.until(ExpectedConditions.invisibilityOf(carScorePage.loader));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test(priority = 3)
     private void step2() {
-        explicitWait.until(ExpectedConditions.invisibilityOf(carScorePage.loader));
-
-        // Step 2
-        try {
-            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-            carScorePage.acceptPhotoButton.click();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    @Test(priority = 3)
-    private void step3() {
-        // Step 3 - Open Hood
-        try {
-            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
-            carScorePage.acceptPhotoButton.click();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        // Step 2 - Fender
+        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+        carScorePage.selectionOptionExcellent.click();
     }
 
     @Test(priority = 3)
@@ -784,6 +775,9 @@ public class CreateCS360ReportTest extends TestBase {
 
     @Test(priority = 60)
     private void verifiedVehicleOption() {
+        // Press back to skip VEHICLE OPTION
+        //driver.navigate().back();
+
         // VERIFIED VEHICLE OPTION
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectFeaturesManuallyButton));
         carScorePage.selectFeaturesManuallyButton.click();
