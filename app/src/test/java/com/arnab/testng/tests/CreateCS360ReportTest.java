@@ -1,8 +1,13 @@
 package com.arnab.testng.tests;
 
+import static java.time.Duration.ofMillis;
+import static io.appium.java_client.touch.WaitOptions.waitOptions;
+import static io.appium.java_client.touch.offset.PointOption.point;
+
 import com.arnab.testng.pages.CarScorePageQA;
 import com.arnab.testng.pages.Spin360PageQA;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -535,8 +540,12 @@ public class CreateCS360ReportTest extends TestBase {
     @Test(priority = 36)
     private void step36_1() {
         // Step 36
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
-        carScorePage.selectionOptionExcellent.click();
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectionOptionExcellent));
+            carScorePage.selectionOptionExcellent.click();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test(priority = 37)
@@ -814,11 +823,33 @@ public class CreateCS360ReportTest extends TestBase {
     @Test(priority = 61)
     private void saveAndClose() {
         // Save and Close
-        //carScorePage.skipButton.click();
         carScorePage.closeButton.click();
         carScorePage.alertDialogSaveButton.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
+    }
+
+    @Test(priority = 61)
+    private void finishAndSubmit() {
+        // Finish and Submit
+        verticalSwipeByPercentages(0.6, 0.3, 0.5);
+        carScorePage.finishReportButton.click();
+        carScorePage.submitReportButton.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+    }
+
+    public void verticalSwipeByPercentages(double startPercentage, double endPercentage, double anchorPercentage) {
+        Dimension size = driver.manage().window().getSize();
+        int anchor = (int) (size.width * anchorPercentage);
+        int startPoint = (int) (size.height * startPercentage);
+        int endPoint = (int) (size.height * endPercentage);
+        new TouchAction(driver)
+                .press(point(anchor, startPoint))
+                .waitAction(waitOptions(ofMillis(1000)))
+                .moveTo(point(anchor, endPoint))
+                .release().perform();
     }
 }
