@@ -121,8 +121,7 @@ public class CreateDS360ReportTest extends TestBase {
     private void keysSafeVisibilityCheckTest() {
         try {
             // TODO if this fails not a problem
-            explicitWait.wait(5000);
-            //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -163,7 +162,8 @@ public class CreateDS360ReportTest extends TestBase {
     private void waitForVideoRecordingTest() {
         try {
             // TODO if this fails not a problem
-            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+            explicitWait.wait(5000);
+            // explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
