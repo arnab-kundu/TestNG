@@ -20,6 +20,7 @@
                     <include name="spin360ExteriorFlowTest" />
                     <include name="waitForVideoRecordingTest" />
                     <include name="spin360ExteriorFlowTest2" />
+                    <include name="spin360ExteriorFlowTest3" />
 
                     <include name="trunkSafeVisibilityCheckTest" />
                     <include name="INTERIOR_TRUNK_3RD_ROW" />
@@ -34,6 +35,7 @@
                     <include name="verifiedVehicleOption" />
 
                     <include name="saveAndClose" />
+                    <!--<include name="finishAndSubmit" />-->
 
                 </methods>
             </class>

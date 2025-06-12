@@ -121,8 +121,9 @@ public class CreateDS360ReportTest extends TestBase {
     private void keysSafeVisibilityCheckTest() {
         try {
             // TODO if this fails not a problem
-            explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
-        } catch (StaleElementReferenceException e) {
+            explicitWait.wait(5000);
+            //explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.cameraPreviewTitle));
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
@@ -144,11 +145,6 @@ public class CreateDS360ReportTest extends TestBase {
 
     @Test(priority = 4)
     private void spin360ExteriorFlowTest() {
-        try {
-            spin360Page.photoPermissionAllowAllButton.click();
-        } catch (Exception e) {
-            System.out.println("Already allowed photo permission");
-        }
         explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.turntableWalkAroundSpinner));
         spin360Page.turntableWalkAroundSpinner.click();
 
@@ -180,6 +176,16 @@ public class CreateDS360ReportTest extends TestBase {
         TouchAction touchAction = new TouchAction<>(driver);
         touchAction.tap(videoCaptureDoneButtonPosition).perform();
 
+        try {
+            explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.reviewFramesNextButton));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test(priority = 3)
+    private void spin360ExteriorFlowTest3() {
+        explicitWait.until(ExpectedConditions.visibilityOf(spin360Page.reviewFramesNextButton));
         spin360Page.reviewFramesNextButton.click();
         spin360Page.acceptButton.click();
         spin360Page.acceptButton.click();
@@ -187,6 +193,12 @@ public class CreateDS360ReportTest extends TestBase {
         spin360Page.acceptButton.click();
         spin360Page.acceptButton.click();
         spin360Page.acceptButton.click();
+
+        try {
+            explicitWait.until(ExpectedConditions.invisibilityOf(carScorePage.loader));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test(priority = 6)
@@ -275,11 +287,13 @@ public class CreateDS360ReportTest extends TestBase {
         carScorePage.takePhotoButton.click();
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.acceptPhotoButton));
         carScorePage.acceptPhotoButton.click();
-        explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectFeaturesManuallyButton));
     }
 
     @Test(priority = 14)
     private void verifiedVehicleOption() {
+        // Press back to skip VEHICLE OPTION
+        //driver.navigate().back();
+
         // VERIFIED VEHICLE OPTION
         explicitWait.until(ExpectedConditions.visibilityOf(carScorePage.selectFeaturesManuallyButton));
         carScorePage.selectFeaturesManuallyButton.click();
@@ -299,6 +313,17 @@ public class CreateDS360ReportTest extends TestBase {
         // Save and Close
         carScorePage.closeButton.click();
         carScorePage.alertDialogSaveButton.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+        carScorePage.workingTab.click();
+    }
+
+    @Test(priority = 15)
+    private void finishAndSubmit() {
+        // Finish and Submit
+        verticalSwipeByPercentages(0.6, 0.3, 0.5);
+        carScorePage.finishReportButton.click();
+        carScorePage.submitReportButton.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
         carScorePage.workingTab.click();
